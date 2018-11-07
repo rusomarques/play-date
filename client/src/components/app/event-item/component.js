@@ -8,7 +8,7 @@ export class component extends React.Component {
   static propTypes = {
     event: PropTypes.shape({
       date: PropTypes.string,
-      location: PropTypes.string,
+      // location: PropTypes.string,
       title: PropTypes.string
     }),
     getEvents: PropTypes.func
@@ -18,11 +18,13 @@ export class component extends React.Component {
     return (
       <div className="single-event">
         <div className="title">
-          {console.log('event item', this.props.event)}
           <h3>{this.props.event.title}</h3>
         </div>
         <div className="ageFrom">
           <h3>Age From: {this.props.event.ageFrom}</h3>
+        </div>
+        <div className="price">
+          <h3>Price: {this.props.event.price}</h3>
         </div>
         {/* <div className="dateTime">
           <h4>

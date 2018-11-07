@@ -14,22 +14,9 @@ export class component extends Component {
     events: PropTypes.array
   };
 
-  componentDidMount() {
-    this.props.getEvents();
-  }
-
-  // componentDidReceiveProps() {}
-
-  // handleChangeAge = event => {
-  //   const age = event.target.value;
-  //   this.props.setAge(age);
-  //   if (age) {
-  //     // this.props.getEvents({ ageFrom_lte: age });
-  //     this.props.getEvents({ ageFrom: age });
-  //   } else {
-  //     this.props.getEvents();
-  //   }
-  // };
+  // componentDidMount() {
+  //   this.props.getEvents();
+  // }
 
   render() {
     if (!this.props.events) {

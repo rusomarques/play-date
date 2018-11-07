@@ -15,6 +15,17 @@ export class component extends Component {
     this.props.getEvents();
   }
 
+  handleFilterAge = event => {
+    const age = event.target.value;
+    this.props.setAge(age);
+    if (age) {
+      // this.props.getEvents({ ageFrom_lte: age });
+      this.props.getEvents({ ageFrom: age });
+    } else {
+      this.props.getEvents();
+    }
+  };
+
   render() {
     if (!this.props.events) {
       return 'loading....';
@@ -22,8 +33,7 @@ export class component extends Component {
     return (
       <div>
         <h3>All Events</h3>
-        {/* <input value={this.props.age} onChange={this.handleChangeAge} /> */}
-        {console.log('evvvvents', this.props.events)}
+        <input value={this.props.age} onChange={this.handleFilterAge} />
         <EventsList events={this.props.events} />
       </div>
     );

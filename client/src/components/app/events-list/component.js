@@ -8,7 +8,6 @@ export class component extends React.Component {
   render() {
     return (
       <div className="events-list">
-        {console.log('jksadhfjkasdhfsda', this.props.events)}
         {this.props.events.map(event => (
           <EventItem key={event.id} event={event} />
         ))}
