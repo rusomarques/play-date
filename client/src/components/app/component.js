@@ -6,6 +6,7 @@ import './index.css';
 import { AddEvent } from './add-event';
 import { AllEvents } from './all-events';
 import { EventDetail } from './event-detail';
+import { Map } from './map';
 
 export class component extends Component {
   static propTypes = {
@@ -14,21 +15,19 @@ export class component extends Component {
     events: PropTypes.array
   };
 
-  // componentDidMount() {
-  //   this.props.getEvents();
-  // }
-
   render() {
-    if (!this.props.events) {
-      return 'loading....';
-    }
     return (
-      <div className="App">
-        <Switch>
-          <Route path="/create" component={AddEvent} />
-          <Route path="/:id" component={EventDetail} />
-          <Route path="/" component={AllEvents} />
-        </Switch>
+      <div className="container">
+        <div className="App">
+          <Switch>
+            <Route path="/create" component={AddEvent} />
+            <Route path="/:id" component={EventDetail} />
+            <Route path="/" component={AllEvents} />
+          </Switch>
+        </div>
+        <div className="map">
+          <Map />
+        </div>
       </div>
     );
   }

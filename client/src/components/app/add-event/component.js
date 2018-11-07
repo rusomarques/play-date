@@ -1,9 +1,11 @@
+/*global google*/
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import faker from 'faker';
+import Geosuggest, { Suggest } from 'react-geosuggest';
 
 import './index.css';
 
@@ -28,10 +30,7 @@ export class component extends React.Component {
     this.setState({ date: date });
   };
 
-  // handleClickButton = event => {
-  //   event.preventDefault();
-  //   this.createEvent();
-  // };
+  onSuggestSelect = (place: Suggest) => {};
 
   handleChangeInput = event => {
     event.preventDefault();
@@ -77,20 +76,41 @@ export class component extends React.Component {
             showTimeSelect
             dateFormat="LLL"
           />
-
-          <input
-            name="location"
-            value={this.state.location}
-            onChange={this.handleChangeInput}
-            type="text"
-            placeholder="Location"
+          <Geosuggest
+            // className="geoSuggest"
+            placeholder="Start typing!"
+            onSuggestSelect={this.onSuggestSelect}
+            location={new google.maps.LatLng(53.558572, 9.9278215)}
+            radius={20}
           />
+
           <input
             name="description"
             value={this.state.description}
             onChange={this.handleChangeInput}
             type="text"
             placeholder="description"
+          />
+          <input
+            name="price"
+            value={this.state.price}
+            onChange={this.handleChangeInput}
+            type="text"
+            placeholder="price"
+          />
+          <input
+            name="ageFrom"
+            value={this.state.ageFrom}
+            onChange={this.handleChangeInput}
+            type="text"
+            placeholder="ageFrom"
+          />
+          <input
+            name="ageTo"
+            value={this.state.ageTO}
+            onChange={this.handleChangeInput}
+            type="text"
+            placeholder="ageTo"
           />
           <button className="button">Create</button>
         </form>

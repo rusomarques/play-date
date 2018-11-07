@@ -3,11 +3,11 @@ import { redux } from '../../../redux';
 
 import { component } from './component';
 
-const mapStateToProps = state => {
-  return {
-    events: state.getEvents.data.data
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     events: state.getEvents.data.data
+//   };
+// };
 
 const mapDispatchToProps = dispatch => ({
   createEvent: event => {
@@ -21,6 +21,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export const container = connect(
-  mapStateToProps,
+  // mapStateToProps,
+  null,
   mapDispatchToProps
 )(component);
