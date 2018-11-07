@@ -7,6 +7,7 @@ import { AddEvent } from './add-event';
 import { AllEvents } from './all-events';
 import { EventDetail } from './event-detail';
 import { Map } from './map';
+import { NavBar } from './nav-bar';
 
 export class component extends Component {
   static propTypes = {
@@ -17,16 +18,20 @@ export class component extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="App">
+      <div className="App">
+        <div className="nav-bar">
+          <NavBar />
+        </div>
+        <div className="container">
           <Switch>
             <Route path="/create" component={AddEvent} />
             <Route path="/:id" component={EventDetail} />
             <Route path="/" component={AllEvents} />
           </Switch>
-        </div>
-        <div className="map">
-          <Map />
+
+          <div className="map">
+            <Map />
+          </div>
         </div>
       </div>
     );

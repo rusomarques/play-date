@@ -17,26 +17,31 @@ export class component extends React.Component {
   render() {
     return (
       <div className="single-event">
-        <div className="title">
-          <h3>{this.props.event.title}</h3>
+        <img src="https://picsum.photos/200/?random" />
+        <div className="fields">
+          <div className="title">
+            <h2>{this.props.event.title}</h2>
+          </div>
+
+          <div className="ageFrom">
+            <h3>Age From: {this.props.event.ageFrom}</h3>
+          </div>
+          <div className="price">
+            <h3>Price: {this.props.event.price}</h3>
+          </div>
         </div>
-        <div className="ageFrom">
-          <h3>Age From: {this.props.event.ageFrom}</h3>
-        </div>
-        <div className="price">
-          <h3>Price: {this.props.event.price}</h3>
-        </div>
-        {/* <div className="dateTime">
-          <h4>
-            {moment(this.props.event.date).format('dddd, MMMM Do YYYY')}
-            <br />
-            {moment(this.props.event.date).format('h:mm a')}
-          </h4>
-        </div> */}
-        {/* <div className="delete">
-        <button onClick={() => this.deleteEvent()}>Delete</button>
-      </div> */}
       </div>
+
+      //   <div className="dateTime">
+      //     <h4>
+      //       {moment(this.props.event.date).format('dddd, MMMM Do YYYY')}
+      //       <br />
+      //       {moment(this.props.event.date).format('h:mm a')}
+      //     </h4>
+      //   </div>
+      //   <div className="delete">
+      //   <button onClick={() => this.deleteEvent()}>Delete</button>
+      // </div>
     );
   }
 }

@@ -1,15 +1,11 @@
-.container {
+/* .container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
-.App {
+} */
+.container {
+  display: flex;
+  flex-direction: row;
   text-align: center;
-  width: 50%;
-}
-
-.map {
-  width: 35%;
-  height: 100%;
-  align-self: stretch;
+  justify-content: space-around;
 }

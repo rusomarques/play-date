@@ -32,7 +32,6 @@ export class component extends Component {
     }
     return (
       <div>
-        <h3>All Events</h3>
         <input value={this.props.age} onChange={this.handleFilterAge} />
         <EventsList events={this.props.events} />
       </div>

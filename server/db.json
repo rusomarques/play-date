@@ -2,6 +2,7 @@
   "events": [
     {
       "id": 1,
+      "image": "https://picsum.photos/200"
       "title": "Cool kids party",
       "description": "Super duper awesome party, great presents.",
       "location": {

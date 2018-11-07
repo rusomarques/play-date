@@ -69,6 +69,7 @@ export class component extends React.Component {
             type="text"
             placeholder="Title"
           />
+
           <DatePicker
             className="datePicker"
             selected={this.state.date}

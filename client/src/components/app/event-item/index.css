@@ -1,3 +1,16 @@
 .single-event {
-  background-color: lightgrey;
+  background-color: paleturquoise;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  padding: 10px;
+  margin: 20px;
 }
+
+/* img {
+  align-self: flex-start;
+}
+
+.fields {
+  align-self: flex-end;
+} */

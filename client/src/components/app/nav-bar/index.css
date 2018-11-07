@@ -1,0 +1,39 @@
+.navbar-container {
+  display: flex;
+  /* background-image: url('image.jpg'); */
+  background-color: lightcoral;
+  color: white;
+  padding: 10px 20px;
+  justify-content: space-between;
+  align-content: center;
+  /* height: 500px; */
+}
+
+.nav-area {
+  display: flex;
+}
+
+.nav-links {
+  margin-right: 20px;
+}
+
+.navbar-button {
+  font-size: 1rem;
+  padding: 10px;
+  border: none;
+  margin: 2px;
+}
+
+.logo-area,
+.user-info {
+  align-self: center;
+}
+
+.logo-area h1 {
+  margin: 0px;
+  color: white;
+}
+
+.logo-area a {
+  text-decoration: none;
+}
