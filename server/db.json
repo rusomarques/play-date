@@ -1,6 +1,17 @@
 {
   "events": [
     {
+      "title": "New Mama Brunch",
+      "image": "http://res.cloudinary.com/rwgr/image/upload/c_scale,w_200/v1541688337/mama-brunch_buscme.jpg",
+      "description": "Upstairs at Cocoa Barcelona - the cafe is a brilliant addition to Barcelona with space, toys and lovely food suitable for all ages. Bring your bumps, babies and toddlers!",
+      "location": "Cocoa Barcelona, Calle Lepant 241, Barcelona, 08013 ",
+      "datetime": "2018-11-16 10:00:00",
+      "ageFrom": 0,
+      "ageTo": 10,
+      "price": 0,
+      "id": 2
+    },
+    {
       "id": 1,
       "image": "https://picsum.photos/200",
       "title": "Cool kids party",
@@ -12,17 +23,8 @@
       "price": 0
     },
     {
-      "title": "Cool kids party",
-      "description": "Super duper awesome party, great presents.",
-      "location": "Barcelona Street",
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 2
-    },
-    {
       "title": "Cool kids party 3",
+      "image": "https://picsum.photos/200",
       "description": "Super duper awesome party, great presents.",
       "location": "Barcelona Street",
       "datetime": "2018-12-20 16:00:00",
@@ -32,14 +34,143 @@
       "id": 3
     },
     {
-      "title": "Israel",
-      "description": "Super duper awesome party, great presents.",
-      "location": "Barcelona Street",
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 4,
-      "ageTo": 4,
-      "price": 5,
-      "id": 4
+      "title": "Another event",
+      "description": "baby coders",
+      "date": "2018-11-10T12:00:36.000Z",
+      "ageFrom": "5",
+      "ageTo": "10",
+      "price": "5",
+      "location": "",
+      "id": 7
+    },
+    {
+      "title": "Lukes party",
+      "description": "Lukes fun and games",
+      "date": "2018-11-20T14:00:12.000Z",
+      "ageFrom": "2",
+      "ageTo": "5",
+      "price": "20",
+      "location": "",
+      "id": 8
+    },
+    {
+      "title": "Baby Yoga",
+      "description": "Yoga it up!",
+      "date": "2018-11-30T16:00:34.000Z",
+      "ageFrom": "1",
+      "ageTo": "4",
+      "price": "5",
+      "location": "",
+      "id": 9
+    },
+    {
+      "title": "Really Cool Event",
+      "description": "really cool",
+      "date": "2018-11-14T12:30:17.000Z",
+      "ageFrom": "3",
+      "ageTo": "4",
+      "price": "10",
+      "location": "",
+      "id": 10
+    },
+    {
+      "title": "",
+      "description": "",
+      "date": "2018-11-08T15:58:20.248Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "id": 11
+    },
+    {
+      "title": "best play date ever",
+      "description": "party time",
+      "date": "2018-12-25T16:00:02.000Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": {
+        "lat": "",
+        "lng": ""
+      },
+      "id": 12
+    },
+    {
+      "title": "Oliver",
+      "description": "",
+      "date": "2018-11-08T16:29:10.383Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": {
+        "lat": "",
+        "lng": ""
+      },
+      "id": 13
+    },
+    {
+      "title": "make a mess",
+      "description": "",
+      "date": "2018-11-08T16:41:12.304Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "id": 14
+    },
+    {
+      "title": "aa",
+      "description": "",
+      "date": "2018-11-08T16:44:03.553Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "id": 15
+    },
+    {
+      "title": "ab",
+      "description": "",
+      "date": "2018-11-08T16:44:34.550Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "id": 16
+    },
+    {
+      "title": "ad",
+      "description": "",
+      "date": "2018-11-08T16:46:38.607Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "id": 17
+    },
+    {
+      "title": "",
+      "description": "",
+      "date": "2018-11-08T16:51:01.092Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "id": 18
+    },
+    {
+      "title": "",
+      "description": "",
+      "date": "2018-11-08T17:07:03.238Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": {
+        "lat": 41.3949147,
+        "lng": 2.1979555000000346
+      },
+      "id": 19
     }
   ],
   "users": [

@@ -32,7 +32,20 @@ export class component extends Component {
     }
     return (
       <div>
-        <input value={this.props.age} onChange={this.handleFilterAge} />
+        <div className="filters">
+          <input
+            value={this.props.age}
+            onChange={this.handleFilterAge}
+            type="text"
+            placeholder="Filter by Age"
+          />
+          {/* <input
+            value={this.props.age}
+            onChange={this.handleFilterAge}
+            type="text"
+            placeholder="Filter by Age"
+          /> */}
+        </div>
         <EventsList events={this.props.events} />
       </div>
     );

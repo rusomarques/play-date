@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-import faker from 'faker';
+// import faker from 'faker';
 import Geosuggest, { Suggest } from 'react-geosuggest';
 
 import './index.css';
@@ -19,7 +19,7 @@ export class component extends React.Component {
     date: moment(),
     title: '',
     description: '',
-    location: '',
+    location: { lat: null, lng: null },
     ageFrom: '',
     ageTo: '',
     price: '',
@@ -30,7 +30,16 @@ export class component extends React.Component {
     this.setState({ date: date });
   };
 
-  onSuggestSelect = (place: Suggest) => {};
+  // onSuggestChange = something => {
+  //   console.log(something, 'something');
+  // };
+
+  onSuggestSelect = place => {
+    const { lat, lng } = place.location;
+    console.log(place, 'place', lat, lng);
+    const location = { lat, lng };
+    this.setState({ location });
+  };
 
   handleChangeInput = event => {
     event.preventDefault();
@@ -39,21 +48,29 @@ export class component extends React.Component {
 
   handleSubmitForm = event => {
     event.preventDefault();
+    console.log('really ', JSON.stringify(this.state));
     this.props
       .createEvent({
-        title: faker.random.words(),
-        description: 'Super duper awesome party, great presents.',
-        location: {
-          lat: faker.address.latitude(),
-          lng: faker.address.longitude()
-        },
-        datetime: '2018-12-20 16:00:00',
-        ageFrom: 2,
-        ageTo: 4,
-        price: 5
+        title: this.state.title,
+        description: this.state.description,
+        date: this.state.date,
+        ageFrom: this.state.ageFrom,
+        ageTo: this.state.ageTo,
+        price: this.state.price,
+        location: this.state.location
       })
       .then(() => {
         this.props.getEvents();
+        this.setState({
+          title: '',
+          location: { lat: null, lng: null },
+          date: moment(),
+          description: '',
+          ageFrom: '',
+          ageTo: '',
+          price: '',
+          error: null
+        });
       });
   };
 
@@ -79,9 +96,10 @@ export class component extends React.Component {
           />
           <Geosuggest
             // className="geoSuggest"
-            placeholder="Start typing!"
+            placeholder="Address"
+            location={new google.maps.LatLng(41.3851, 2.1734)}
+            // onChange={this.onSuggestChange}
             onSuggestSelect={this.onSuggestSelect}
-            location={new google.maps.LatLng(53.558572, 9.9278215)}
             radius={20}
           />
 
@@ -90,30 +108,30 @@ export class component extends React.Component {
             value={this.state.description}
             onChange={this.handleChangeInput}
             type="text"
-            placeholder="description"
+            placeholder="Description"
           />
           <input
             name="price"
             value={this.state.price}
             onChange={this.handleChangeInput}
             type="text"
-            placeholder="price"
+            placeholder="Price"
           />
           <input
             name="ageFrom"
             value={this.state.ageFrom}
             onChange={this.handleChangeInput}
             type="text"
-            placeholder="ageFrom"
+            placeholder="Age From"
           />
           <input
             name="ageTo"
             value={this.state.ageTO}
             onChange={this.handleChangeInput}
             type="text"
-            placeholder="ageTo"
+            placeholder="Age To"
           />
-          <button className="button">Create</button>
+          <button className="button">Add</button>
         </form>
         {this.state.error && (
           <p className="error-message">{this.state.error}</p>

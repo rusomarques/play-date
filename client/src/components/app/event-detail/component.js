@@ -7,7 +7,7 @@ export class component extends React.Component {
   static propTypes = {
     event: PropTypes.shape({
       date: PropTypes.string,
-      location: PropTypes.string,
+      // location: PropTypes.string,
       title: PropTypes.string
     }),
     getSingleEvent: PropTypes.func
