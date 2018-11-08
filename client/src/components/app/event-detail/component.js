@@ -23,16 +23,10 @@ export class component extends React.Component {
   render() {
     return (
       <div>
-        <h1>event detail page</h1>
-
-        {/* <div className="event-detail">
-          <div className="title">
-            <h3>{this.props.event.title}</h3>
-          </div>
-          <div className="location">
-            <h3>{this.props.event.location}</h3>
-          </div>
-        </div> */}
+        <h1>{this.props.events.title}</h1>
+        <h3>Recommended Age: {this.props.events.ageFrom}</h3>
+        <h3>Price: {this.props.events.price}</h3>
+        <h3>{this.props.events.location}</h3>
       </div>
     );
   }

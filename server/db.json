@@ -5,10 +5,7 @@
       "image": "https://picsum.photos/200",
       "title": "Cool kids party",
       "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-34.397",
-        "lng": "150.644"
-      },
+      "location": "Barcelona Street",
       "datetime": "2018-12-20 16:00:00",
       "ageFrom": 1,
       "ageTo": 4,
@@ -17,10 +14,7 @@
     {
       "title": "Cool kids party",
       "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-34.397",
-        "lng": "150.644"
-      },
+      "location": "Barcelona Street",
       "datetime": "2018-12-20 16:00:00",
       "ageFrom": 2,
       "ageTo": 4,
@@ -30,10 +24,7 @@
     {
       "title": "Cool kids party 3",
       "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-34.397",
-        "lng": "150.644"
-      },
+      "location": "Barcelona Street",
       "datetime": "2018-12-20 16:00:00",
       "ageFrom": 3,
       "ageTo": 4,
@@ -43,262 +34,12 @@
     {
       "title": "Israel",
       "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-25.4270",
-        "lng": "88.4652"
-      },
+      "location": "Barcelona Street",
       "datetime": "2018-12-20 16:00:00",
       "ageFrom": 4,
       "ageTo": 4,
       "price": 5,
       "id": 4
-    },
-    {
-      "title": "action-items",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "27.4813",
-        "lng": "168.2794"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 5
-    },
-    {
-      "title": "PCI",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-51.6948",
-        "lng": "-110.1209"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 6
-    },
-    {
-      "title": "Baht",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-45.2264",
-        "lng": "-32.8496"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 7
-    },
-    {
-      "title": "navigating disintermediate Digitized",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-18.4680",
-        "lng": "136.6607"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 8
-    },
-    {
-      "title": "metrics Georgia Holy See (Vatican City State)",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "29.2408",
-        "lng": "151.1549"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 9
-    },
-    {
-      "title": "sexy FTP Music",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "18.5072",
-        "lng": "-65.6903"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 10
-    },
-    {
-      "title": "mission-critical Minnesota Kids",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-38.0129",
-        "lng": "-22.2053"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 11
-    },
-    {
-      "title": "Generic",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "25.9643",
-        "lng": "99.8469"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 12
-    },
-    {
-      "title": "Ports Interactions",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-82.6788",
-        "lng": "49.0001"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 13
-    },
-    {
-      "title": "haptic incremental",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "56.1953",
-        "lng": "-172.1826"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 14
-    },
-    {
-      "title": "Nebraska ivory Pants",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-61.1373",
-        "lng": "-115.7836"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 15
-    },
-    {
-      "title": "Generic Assistant Credit Card Account",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-59.7794",
-        "lng": "-52.3898"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 16
-    },
-    {
-      "title": "B2B Handmade Wooden Tuna",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "86.1085",
-        "lng": "-80.4175"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 17
-    },
-    {
-      "title": "Multi-lateral utilisation",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-78.7360",
-        "lng": "-115.8339"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 18
-    },
-    {
-      "title": "Oklahoma",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "44.9899",
-        "lng": "159.3411"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 19
-    },
-    {
-      "title": "Usability",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "-26.2178",
-        "lng": "-176.8150"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 20
-    },
-    {
-      "title": "withdrawal Orchestrator",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "24.9783",
-        "lng": "-44.9993"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 21
-    },
-    {
-      "title": "Handcrafted Soft Pizza Ohio",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "23.2576",
-        "lng": "46.7229"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 22
-    },
-    {
-      "title": "Iceland Tanzanian Shilling",
-      "description": "Super duper awesome party, great presents.",
-      "location": {
-        "lat": "32.3451",
-        "lng": "-147.5757"
-      },
-      "datetime": "2018-12-20 16:00:00",
-      "ageFrom": 2,
-      "ageTo": 4,
-      "price": 5,
-      "id": 23
     }
   ],
   "users": [
