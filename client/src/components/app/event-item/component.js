@@ -32,7 +32,7 @@ export class component extends React.Component {
           </div>
 
           <div className="location">
-            <h3> {JSON.stringify(this.props.event.location)}</h3>
+            <h3> {this.props.event.location}</h3>
           </div>
 
           <div className="ageFrom">

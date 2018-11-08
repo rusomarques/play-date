@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 // import faker from 'faker';
-import Geosuggest, { Suggest } from 'react-geosuggest';
+import Geosuggest from 'react-geosuggest';
 
 import './index.css';
 
@@ -36,9 +36,9 @@ export class component extends React.Component {
 
   onSuggestSelect = place => {
     const { lat, lng } = place.location;
-    console.log(place, 'place', lat, lng);
+    console.log(place, 'place');
     const location = { lat, lng };
-    this.setState({ location });
+    this.setState({ location: place.gmaps.formatted_address });
   };
 
   handleChangeInput = event => {
@@ -48,7 +48,6 @@ export class component extends React.Component {
 
   handleSubmitForm = event => {
     event.preventDefault();
-    console.log('really ', JSON.stringify(this.state));
     this.props
       .createEvent({
         title: this.state.title,
