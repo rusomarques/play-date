@@ -9,12 +9,12 @@ export const rest = reduxApi({
     }
   },
 
-  // getSingleEvent: {
-  //   url: '/events/:id',
-  //   options: {
-  //     method: 'GET'
-  //   }
-  // },
+  getSingleEvent: {
+    url: '/events/:id',
+    options: {
+      method: 'GET'
+    }
+  },
 
   createEvent: {
     url: '/events',

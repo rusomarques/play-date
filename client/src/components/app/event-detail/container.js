@@ -4,11 +4,11 @@ import { withRouter } from 'react-router-dom';
 import { component } from './component';
 
 const mapStateToProps = state => ({
-  // events: state.getevents.data.data || []
+  events: state.getSingleEvent.data.data || []
 });
 
 const mapDispatchToProps = dispatch => ({
-  getEvents: params => dispatch(redux.rest.actions.getEvents(params))
+  getSingleEvent: params => dispatch(redux.rest.actions.getSingleEvent(params))
 });
 
 export const container = withRouter(
