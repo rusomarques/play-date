@@ -1,4 +1,4 @@
-import { component } from './component';
+import { container } from './container';
 
-export const Map = component;
+export const Map = container;
 Map.displayName = 'Map';

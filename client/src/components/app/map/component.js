@@ -5,9 +5,14 @@ import './index.css';
 
 export class component extends React.Component {
   render() {
+    console.log('cshjkdfhbsjdgfshd', this.props.events);
+
     const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap defaultZoom={13} defaultCenter={{ lat: 41.3851, lng: 2.1734 }}>
-        <Marker position={{ lat: 41.3851, lng: 2.1734 }} />
+        {/* <Marker position={{ lat: 41.3851, lng: 2.1734 }} /> */}
+        {this.props.events.map(el => (
+          <Marker position={{ lat: el.coords[0], lng: el.coords[1] }} />
+        ))}
       </GoogleMap>
     ));
     return (

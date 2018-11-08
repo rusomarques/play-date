@@ -37,8 +37,10 @@ export class component extends React.Component {
   onSuggestSelect = place => {
     const { lat, lng } = place.location;
     console.log(place, 'place');
-    const location = { lat, lng };
-    this.setState({ location: place.gmaps.formatted_address });
+    this.setState({
+      location: place.gmaps.formatted_address,
+      coords: [lat, lng]
+    });
   };
 
   handleChangeInput = event => {
@@ -56,7 +58,8 @@ export class component extends React.Component {
         ageFrom: this.state.ageFrom,
         ageTo: this.state.ageTo,
         price: this.state.price,
-        location: this.state.location
+        location: this.state.location,
+        coords: this.state.coords
       })
       .then(() => {
         this.props.getEvents();
