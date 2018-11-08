@@ -14,9 +14,13 @@ export class component extends React.Component {
     getEvents: PropTypes.func
   };
 
+  handleClick = () => {
+    this.props.history.push(`/${this.props.event.id}`);
+  };
+
   render() {
     return (
-      <div className="single-event">
+      <div className="single-event" onClick={this.handleClick}>
         <img src={this.props.event.image} alt="Event" />
         <div className="fields">
           <div className="title">

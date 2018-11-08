@@ -15,7 +15,7 @@ export class component extends React.Component {
           ))}
         </div>
         <div className="map">
-          <Map />
+          <Map events={this.props.events} />
         </div>
       </div>
     );

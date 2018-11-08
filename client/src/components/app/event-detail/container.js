@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { component } from './component';
 
 const mapStateToProps = state => ({
-  events: state.getSingleEvent.data || []
+  event: state.getSingleEvent.data
 });
 
 const mapDispatchToProps = dispatch => ({

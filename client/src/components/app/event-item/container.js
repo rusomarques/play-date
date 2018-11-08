@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { redux } from '../../../redux';
+import { withRouter } from 'react-router-dom';
 
+import { redux } from '../../../redux';
 import { component } from './component';
 
 const mapDispatchToProps = dispatch => ({
@@ -14,7 +15,9 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export const container = connect(
-  null,
-  mapDispatchToProps
-)(component);
+export const container = withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(component)
+);

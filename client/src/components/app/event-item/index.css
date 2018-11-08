@@ -5,6 +5,12 @@
   justify-content: space-around;
   padding: 10px;
   margin: 20px;
+  cursor: pointer;
+  transition: all 500ms;
+}
+
+.single-event:hover {
+  filter: brightness(85%);
 }
 
 /* img {
