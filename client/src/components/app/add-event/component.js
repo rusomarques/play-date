@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-// import faker from 'faker';
 import Geosuggest from 'react-geosuggest';
 
 import './index.css';
@@ -30,13 +29,8 @@ export class component extends React.Component {
     this.setState({ date: date });
   };
 
-  // onSuggestChange = something => {
-  //   console.log(something, 'something');
-  // };
-
   onSuggestSelect = place => {
     const { lat, lng } = place.location;
-    console.log(place, 'place');
     this.setState({
       location: place.gmaps.formatted_address,
       coords: [lat, lng]
@@ -63,16 +57,7 @@ export class component extends React.Component {
       })
       .then(() => {
         this.props.getEvents();
-        this.setState({
-          title: '',
-          location: { lat: null, lng: null },
-          date: moment(),
-          description: '',
-          ageFrom: '',
-          ageTo: '',
-          price: '',
-          error: null
-        });
+        this.props.history.push('/');
       });
   };
 
@@ -97,10 +82,8 @@ export class component extends React.Component {
             dateFormat="LLL"
           />
           <Geosuggest
-            // className="geoSuggest"
             placeholder="Address"
             location={new google.maps.LatLng(41.3851, 2.1734)}
-            // onChange={this.onSuggestChange}
             onSuggestSelect={this.onSuggestSelect}
             radius={20}
           />

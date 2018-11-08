@@ -24,22 +24,18 @@ button {
   font-size: 18px;
   font-size: 1rem;
   position: relative;
-  width: 50%;
-  margin: 1em auto;
   text-align: left;
 }
-/* .geosuggest__input {
-  width: 100%;
+.geosuggest__input {
   border: 2px solid transparent;
   box-shadow: 0 0 1px #3d464d;
-  padding: 0.5em 1em;
   -webkit-transition: border 0.2s, box-shadow 0.2s;
   transition: border 0.2s, box-shadow 0.2s;
-} */
-/* .geosuggest__input:focus {
+}
+.geosuggest__input:focus {
   border-color: #267dc0;
   box-shadow: 0 0 0 transparent;
-} */
+}
 .geosuggest__suggests {
   position: absolute;
   top: 100%;
@@ -64,9 +60,6 @@ button {
   border-width: 0;
 }
 
-/**
- * A geosuggest item
- */
 .geosuggest__item {
   font-size: 18px;
   font-size: 1rem;

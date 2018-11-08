@@ -21,8 +21,6 @@ export class component extends Component {
     this.setState({ date: date });
   };
 
-  onSuggestSelect = (place: Suggest) => {};
-
   handleChangeInput = event => {
     event.preventDefault();
     this.setState({ [event.target.name]: event.target.value });
@@ -39,7 +37,6 @@ export class component extends Component {
         <div className="nav-area">
           <DatePicker
             className="datePicker"
-            // placeholder="Pick a date"
             selected={this.state.date}
             onChange={this.handleChange}
             showTimeSelect

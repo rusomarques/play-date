@@ -6,7 +6,7 @@ import './index.css';
 import { AddEvent } from './add-event';
 import { AllEvents } from './all-events';
 import { EventDetail } from './event-detail';
-import { Map } from './map';
+// import { Map } from './map';
 import { NavBar } from './nav-bar';
 
 export class component extends Component {
@@ -28,10 +28,9 @@ export class component extends Component {
             <Route path="/:id" component={EventDetail} />
             <Route path="/" component={AllEvents} />
           </Switch>
-
-          <div className="map">
+          {/* <div className="map">
             <Map />
-          </div>
+          </div> */}
         </div>
       </div>
     );

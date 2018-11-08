@@ -1,5 +1,16 @@
-.events-list {
+/* .events-list {
+  display: flex;
+  flex-direction: column;
   justify-self: center;
   width: 100%;
   padding: 10px;
+}
+
+.map {
+  display: flex;
+  flex-direction: row;
+} */
+
+.events-container {
+  display: flex;
 }
