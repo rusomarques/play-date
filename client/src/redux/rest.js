@@ -8,6 +8,14 @@ export const rest = reduxApi({
       method: 'GET'
     }
   },
+
+  // getSingleEvent: {
+  //   url: '/events/:id',
+  //   options: {
+  //     method: 'GET'
+  //   }
+  // },
+
   createEvent: {
     url: '/events',
     options: {
