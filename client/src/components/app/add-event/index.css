@@ -5,7 +5,8 @@
   align-items: center;
 }
 
-input {
+input,
+textarea {
   margin: 20px;
   padding: 10px;
   font-weight: 800;

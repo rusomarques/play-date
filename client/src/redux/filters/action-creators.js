@@ -6,3 +6,12 @@ export const setAge = age => {
     }
   };
 };
+
+export const filterPrice = free => {
+  return {
+    type: 'FILTER_PRICE',
+    payload: {
+      free
+    }
+  };
+};

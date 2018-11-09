@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import DatePicker from 'react-datepicker';
 import moment from 'moment';
+import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import './index.css';
 
@@ -26,6 +28,16 @@ export class component extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  handleFilterAge = event => {
+    const age = event.target.value;
+    this.props.setAge(age);
+    if (age) {
+      this.props.getEvents({ ageFrom: age });
+    } else {
+      this.props.getEvents();
+    }
+  };
+
   render() {
     return (
       <div className="navbar-container">
@@ -35,16 +47,13 @@ export class component extends Component {
           </Link>
         </div>
         <div className="nav-area">
-          <DatePicker
-            className="datePicker"
-            selected={this.state.date}
-            onChange={this.handleChange}
-            showTimeSelect
-            dateFormat="LLL"
-          />
           <div className="nav-links">
             <Link to="/create">
-              <button className="navbar-button">ADD A PLAY DATE</button>
+              <Tooltip title="Add">
+                <Button variant="fab" aria-label="Add">
+                  <AddIcon />
+                </Button>
+              </Tooltip>
             </Link>
           </div>
         </div>

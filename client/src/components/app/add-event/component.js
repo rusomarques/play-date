@@ -65,7 +65,6 @@ export class component extends React.Component {
   render() {
     return (
       <div className="add-event">
-        <h1>Add an event</h1>
         <form onSubmit={this.handleSubmitForm} className="form">
           <input
             name="title"
@@ -89,32 +88,34 @@ export class component extends React.Component {
             radius={20}
           />
 
-          <input
+          <textarea
+            rows="4"
+            cols="50"
             name="description"
             value={this.state.description}
             onChange={this.handleChangeInput}
-            type="text"
+            type="text-box"
             placeholder="Description"
           />
           <input
             name="price"
             value={this.state.price}
             onChange={this.handleChangeInput}
-            type="text"
-            placeholder="Price"
+            type="number"
+            placeholder="Price €"
           />
           <input
             name="ageFrom"
             value={this.state.ageFrom}
             onChange={this.handleChangeInput}
-            type="text"
+            type="number"
             placeholder="Age From"
           />
           <input
             name="ageTo"
             value={this.state.ageTO}
             onChange={this.handleChangeInput}
-            type="text"
+            type="number"
             placeholder="Age To"
           />
           <button className="button">Add</button>

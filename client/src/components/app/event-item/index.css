@@ -1,22 +1,15 @@
-.single-event {
-  background-color: paleturquoise;
+/* .single-event {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-around;
   padding: 10px;
-  margin: 20px;
+  margin: 10px;
   cursor: pointer;
   transition: all 500ms;
 }
 
 .single-event:hover {
   filter: brightness(85%);
-}
-
-/* img {
-  align-self: flex-start;
-}
-
-.fields {
-  align-self: flex-end;
 } */
+.single-event {
+  display: flex;
+}

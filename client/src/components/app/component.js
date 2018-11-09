@@ -14,6 +14,7 @@ export class component extends Component {
         <div className="nav-bar">
           <NavBar />
         </div>
+
         <div className="container">
           <Switch>
             <Route path="/create" component={AddEvent} />

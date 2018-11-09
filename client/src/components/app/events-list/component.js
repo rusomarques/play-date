@@ -9,13 +9,13 @@ export class component extends React.Component {
   render() {
     return (
       <div className="events-container">
+        <div className="map">
+          <Map events={this.props.events} fullWidth={true} />
+        </div>
         <div className="events-list">
           {this.props.events.map(event => (
             <EventItem key={event.id} event={event} />
           ))}
-        </div>
-        <div className="map">
-          <Map events={this.props.events} />
         </div>
       </div>
     );
