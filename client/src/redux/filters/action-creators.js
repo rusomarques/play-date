@@ -15,3 +15,12 @@ export const filterPrice = free => {
     }
   };
 };
+
+export const searchEvents = value => {
+  return {
+    type: 'FILTER_PRICE',
+    payload: {
+      value
+    }
+  };
+};

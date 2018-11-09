@@ -11,7 +11,6 @@ export class component extends React.Component {
 
   render() {
     const { events } = this.props;
-    console.log(this.props, 'propppps');
 
     if (!events || events.length === 0) {
       return 'No events';

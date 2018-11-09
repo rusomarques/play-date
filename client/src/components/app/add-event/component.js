@@ -5,6 +5,9 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import Geosuggest from 'react-geosuggest';
+import Dropzone from 'react-dropzone';
+import ReactCrop from 'react-image-crop';
+import 'react-image-crop/dist/ReactCrop.css';
 
 import './index.css';
 
@@ -23,6 +26,10 @@ export class component extends React.Component {
     ageFrom: '',
     ageTo: '',
     price: '',
+    imgSrc: null,
+    crop: {
+      aspect: 1 / 1
+    },
     error: null
   };
 
@@ -62,9 +69,42 @@ export class component extends React.Component {
       });
   };
 
+  handleOnDrop = (files, rejectedFiles) => {
+    const currentFile = files[0];
+    const reader = new FileReader();
+    reader.addEventListener(
+      'load',
+      () => {
+        this.setState({
+          imgSrc: reader.result
+        });
+      },
+      false
+    );
+    reader.readAsDataURL(currentFile);
+  };
+
+  handleOnCropChange = crop => {
+    this.setState({ crop });
+  };
+
   render() {
+    const { imgSrc } = this.state;
     return (
       <div className="add-event">
+        <div className="upload-image">
+          {imgSrc !== null ? (
+            <div>
+              <ReactCrop
+                src={imgSrc}
+                crop={this.state.crop}
+                onChange={this.handleOnCropChange}
+              />
+            </div>
+          ) : (
+            <Dropzone onDrop={this.handleOnDrop}>Drop file here</Dropzone>
+          )}
+        </div>
         <form onSubmit={this.handleSubmitForm} className="form">
           <input
             name="title"
