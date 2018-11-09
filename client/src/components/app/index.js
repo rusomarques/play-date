@@ -1,4 +1,4 @@
-import { container } from './container';
+import { component } from './component';
 
-export const App = container;
+export const App = component;
 App.displayName = 'App';

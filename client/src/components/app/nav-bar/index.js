@@ -1,4 +1,4 @@
-import { container } from './container';
+import { component } from './component';
 
-export const NavBar = container;
+export const NavBar = component;
 NavBar.displayName = 'NavBar';

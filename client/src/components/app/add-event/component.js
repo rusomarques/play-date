@@ -18,7 +18,8 @@ export class component extends React.Component {
     date: moment(),
     title: '',
     description: '',
-    location: { lat: null, lng: null },
+    location: '',
+    coords: { lat: null, lng: null },
     ageFrom: '',
     ageTo: '',
     price: '',
@@ -29,7 +30,7 @@ export class component extends React.Component {
     this.setState({ date: date });
   };
 
-  onSuggestSelect = place => {
+  handleSuggestSelect = place => {
     const { lat, lng } = place.location;
     this.setState({
       location: place.gmaps.formatted_address,
@@ -84,7 +85,7 @@ export class component extends React.Component {
           <Geosuggest
             placeholder="Address"
             location={new google.maps.LatLng(41.3851, 2.1734)}
-            onSuggestSelect={this.onSuggestSelect}
+            onSuggestSelect={this.handleSuggestSelect}
             radius={20}
           />
 

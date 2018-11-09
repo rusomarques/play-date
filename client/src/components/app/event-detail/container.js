@@ -17,8 +17,3 @@ export const container = withRouter(
     mapDispatchToProps
   )(component)
 );
-
-// export const container = connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(component);

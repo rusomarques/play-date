@@ -8,10 +8,14 @@ export class component extends React.Component {
   static propTypes = {
     event: PropTypes.shape({
       date: PropTypes.string,
-      // location: PropTypes.string,
-      title: PropTypes.string
+      location: PropTypes.string,
+      title: PropTypes.string,
+      ageFrom: PropTypes.number,
+      ageTo: PropTypes.number,
+      price: PropTypes.price
     }),
-    getEvents: PropTypes.func
+    getEvents: PropTypes.func,
+    history: PropTypes.object
   };
 
   handleClick = () => {
