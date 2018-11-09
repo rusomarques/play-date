@@ -14,11 +14,13 @@ export class component extends Component {
     ageTo: '',
     price: '',
     search: '',
+    free: '',
+    age: '',
     error: null
   };
 
-  handleChange = date => {
-    this.setState({ date: date });
+  handleChangeDate = date => {
+    this.props.setDate(date);
   };
 
   handleChangeInput = event => {
@@ -28,24 +30,41 @@ export class component extends Component {
 
   handleFilterAge = event => {
     const age = event.target.value;
+    console.log('handleFilterAge', age);
     this.props.setAge(age);
-    if (age) {
-      // this.props.getEvents({ ageFrom_lte: age });
-      this.props.getEvents({ ageFrom: age });
-    } else {
-      this.props.getEvents();
-    }
   };
 
-  handleFreeEvents = event => {
-    const free = event.target.value;
-    this.props.filterPrice(free);
-    if (free) {
-      this.props.getEvents({ price: free });
-    } else {
-      this.props.getEvents();
-    }
+  handleChangeFree = event => {
+    const checked = event.target.checked;
+    console.log('handleChangeFree', checked);
+    this.props.setFree(checked);
   };
+
+  componentDidUpdate(prevProps) {
+    const { age, free, date } = this.props;
+    if (
+      age === prevProps.age &&
+      free === prevProps.free &&
+      date === prevProps.date
+    ) {
+      return;
+    }
+    const queryObject = {};
+    if (date) {
+      queryObject.date = date.format('YYYY-MM-DD');
+    }
+    if (free) {
+      queryObject.price = 0;
+    }
+    if (age || age === 0) {
+      queryObject.ageFrom = age;
+    }
+    // if (age) {
+    //   queryObject.q = age;
+    // }
+    console.log('queryObject', queryObject);
+    this.props.getEvents(queryObject);
+  }
 
   // handleSearch = event => {
   //   this.setState({ search: event.target.value });
@@ -77,10 +96,9 @@ export class component extends Component {
 
         <DatePicker
           className="datePicker"
-          selected={this.state.date}
-          onChange={this.handleChange}
-          showTimeSelect
-          dateFormat="LLL"
+          // selected={this.props.date}
+          onChange={this.handleChangeDate}
+          dateFormat="DD/MM/YY"
         />
 
         <input
@@ -89,13 +107,14 @@ export class component extends Component {
           type="text"
           placeholder="Filter by Age"
         />
-
-        <input
-          value={this.props.free}
-          onChange={this.handleFreeEvents}
-          type="text"
-          placeholder="Filter by Price"
-        />
+        <label>
+          <input
+            type="checkbox"
+            checked={this.props.free}
+            onChange={this.handleChangeFree}
+          />
+          Free
+        </label>
       </div>
     );
   }

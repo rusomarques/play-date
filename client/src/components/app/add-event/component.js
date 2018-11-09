@@ -22,7 +22,7 @@ export class component extends React.Component {
     title: '',
     description: '',
     location: '',
-    coords: { lat: null, lng: null },
+    coords: { lat: '', lng: '' },
     ageFrom: '',
     ageTo: '',
     price: '',
@@ -153,7 +153,7 @@ export class component extends React.Component {
           />
           <input
             name="ageTo"
-            value={this.state.ageTO}
+            value={this.state.ageTo}
             onChange={this.handleChangeInput}
             type="number"
             placeholder="Age To"

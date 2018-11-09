@@ -1,13 +1,24 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { InfoBox } from 'react-google-maps/lib/components/addons/InfoBox';
+import { Link } from 'react-router-dom';
 
 import './index.css';
 
 export class component extends React.Component {
-  // handleMarkerClick = () => {
-  //   console.log(this.props.events, 'title');
+  state = {
+    activeId: null
+  };
 
-  // };
+  handleMarkerClick = el => () => {
+    console.log('event', el);
+    this.setState({ activeId: el.id });
+  };
+
+  handleCloseInfoBox = () => {
+    console.log('handleCloseInfoBox');
+    this.setState({ activeId: null });
+  };
 
   render() {
     const { events } = this.props;
@@ -28,8 +39,28 @@ export class component extends React.Component {
               <Marker
                 key={el.id}
                 position={{ lat: el.coords[0], lng: el.coords[1] }}
-                // onClick={this.handleMarkerClick}
-              />
+                onClick={this.handleMarkerClick(el)}
+              >
+                {this.state.activeId === el.id && (
+                  // <InfoBox onCloseClick={this.handleCloseInfoBox}>
+                  <InfoBox
+                    options={{ closeBoxURL: ``, enableEventPropagation: true }}
+                    onCloseClick={() => console.log('close!')}
+                  >
+                    <div
+                      style={{
+                        backgroundColor: `yellow`,
+                        opacity: 0.75,
+                        padding: `12px`
+                      }}
+                    >
+                      <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+                        <Link to={`/${el.id}`}>{el.title}</Link>
+                      </div>
+                    </div>
+                  </InfoBox>
+                )}
+              </Marker>
             );
           })}
         </GoogleMap>

@@ -7,11 +7,20 @@ export const setAge = age => {
   };
 };
 
-export const filterPrice = free => {
+export const setFree = value => {
   return {
-    type: 'FILTER_PRICE',
+    type: 'SET_FREE',
     payload: {
-      free
+      free: !!value
+    }
+  };
+};
+
+export const setDate = date => {
+  return {
+    type: 'SET_DATE',
+    payload: {
+      date
     }
   };
 };
