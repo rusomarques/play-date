@@ -1,6 +1,9 @@
-import moment from 'moment';
-
-const initialState = { age: '', free: false, Search: '', date: moment() };
+const initialState = {
+  age: '',
+  free: false,
+  searchText: '',
+  date: null
+};
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -11,9 +14,7 @@ export const reducer = (state = initialState, action) => {
     case 'SET_DATE':
       return { ...state, date: action.payload.date };
     case 'SEARCH_EVENTS':
-      return Object.assign({}, state, {
-        searchText: action.text
-      });
+      return { ...state, searchText: action.payload.searchText };
 
     default:
       return state;

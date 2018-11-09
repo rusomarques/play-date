@@ -25,11 +25,11 @@ export const setDate = date => {
   };
 };
 
-export const searchEvents = value => {
+export const searchEvents = searchText => {
   return {
-    type: 'FILTER_PRICE',
+    type: 'SEARCH_EVENTS',
     payload: {
-      value
+      searchText
     }
   };
 };

@@ -13,7 +13,7 @@ export class component extends Component {
     ageFrom: '',
     ageTo: '',
     price: '',
-    search: '',
+    searchText: '',
     free: '',
     age: '',
     error: null
@@ -23,10 +23,10 @@ export class component extends Component {
     this.props.setDate(date);
   };
 
-  handleChangeInput = event => {
-    event.preventDefault();
-    this.setState({ [event.target.name]: event.target.value });
-  };
+  // handleChangeInput = event => {
+  //   event.preventDefault();
+  //   this.setState({ [event.target.name]: event.target.value });
+  // };
 
   handleFilterAge = event => {
     const age = event.target.value;
@@ -40,12 +40,18 @@ export class component extends Component {
     this.props.setFree(checked);
   };
 
+  handleSearch = event => {
+    const searchText = event.target.value;
+    this.props.searchEvents(searchText);
+  };
+
   componentDidUpdate(prevProps) {
-    const { age, free, date } = this.props;
+    const { age, free, date, searchText } = this.props;
     if (
       age === prevProps.age &&
       free === prevProps.free &&
-      date === prevProps.date
+      date === prevProps.date &&
+      searchText === prevProps.searchText
     ) {
       return;
     }
@@ -59,39 +65,27 @@ export class component extends Component {
     if (age || age === 0) {
       queryObject.ageFrom = age;
     }
-    // if (age) {
-    //   queryObject.q = age;
-    // }
+    if (searchText) {
+      queryObject.q = searchText;
+    }
     console.log('queryObject', queryObject);
     this.props.getEvents(queryObject);
   }
 
-  // handleSearch = event => {
-  //   this.setState({ search: event.target.value });
-  // };
-
   render() {
-    // let filteredEvents = this.props.events.filter(event => {
-    //   return event.title.indexOf(this.state.search) !== -1;
-    // });
     return (
       <div className="filter-container">
-        {/* <ul>
-          {filteredEvents.map(event => {
-            return <EventItem key={event.id} event={event} />;
-          })}
-        </ul> */}
         <input
           className="search-field"
           placeholder="Search a play date..."
           type="text"
-          value={this.state.search}
-          onChange={this.handleSeach}
-          onKeyPress={event => {
-            if (event.key === 'Enter') {
-              console.log('clicked');
-            }
-          }}
+          value={this.props.searchText}
+          onChange={this.handleSearch}
+          // onKeyPress={event => {
+          //   if (event.key === 'Enter') {
+          //     console.log('clicked');
+          //   }
+          // }}
         />
 
         <DatePicker
