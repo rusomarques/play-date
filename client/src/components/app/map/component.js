@@ -49,7 +49,7 @@ export class component extends React.Component {
                   >
                     <div
                       style={{
-                        backgroundColor: `yellow`,
+                        backgroundColor: `lightgrey`,
                         opacity: 0.75,
                         padding: `12px`
                       }}

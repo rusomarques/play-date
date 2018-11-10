@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
-import { EventItem } from '../event-item';
-
 export class component extends Component {
   state = {
     date: moment(),
@@ -22,11 +20,6 @@ export class component extends Component {
   handleChangeDate = date => {
     this.props.setDate(date);
   };
-
-  // handleChangeInput = event => {
-  //   event.preventDefault();
-  //   this.setState({ [event.target.name]: event.target.value });
-  // };
 
   handleFilterAge = event => {
     const age = event.target.value;
@@ -81,11 +74,6 @@ export class component extends Component {
           type="text"
           value={this.props.searchText}
           onChange={this.handleSearch}
-          // onKeyPress={event => {
-          //   if (event.key === 'Enter') {
-          //     console.log('clicked');
-          //   }
-          // }}
         />
 
         <DatePicker
@@ -104,6 +92,7 @@ export class component extends Component {
         <label>
           <input
             type="checkbox"
+            label="free?"
             checked={this.props.free}
             onChange={this.handleChangeFree}
           />

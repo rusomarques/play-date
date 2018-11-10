@@ -22,6 +22,7 @@ export const rest = reduxApi({
       method: 'POST'
     }
   },
+
   updateEvent: {
     url: '/events/:id',
     options: {

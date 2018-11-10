@@ -4,7 +4,7 @@
       "title": "Ludoteca Placeta del Pi",
       "image": "http://res.cloudinary.com/rwgr/image/upload/c_scale,h_200/v1541702611/Ludoteca_Placeta_del_Pi_d04vcw.jpg",
       "description": "Playtime",
-      "date": "2018-11-08T18:40:38.463Z",
+      "date": "2018-11-08",
       "ageFrom": "0",
       "ageTo": "5",
       "price": "0",
@@ -19,7 +19,7 @@
       "title": "Ludoteca Poble Sec ",
       "image": "https://res.cloudinary.com/rwgr/image/upload/v1541702901/poblesec_afaie5.jpg",
       "description": "ludo play time",
-      "date": "2018-11-16T16:00:04.000Z",
+      "date": "2018-11-16",
       "ageFrom": "1",
       "ageTo": "5",
       "price": "0",
@@ -34,7 +34,7 @@
       "title": "Ludoteca Guitard",
       "image": "http://res.cloudinary.com/rwgr/image/upload/c_scale,h_200/v1541703130/gitard_mxjlqz.jpg",
       "description": "more ludoteca fun",
-      "date": "2018-11-15T09:00:29.000Z",
+      "date": "2018-11-15",
       "ageFrom": "1",
       "ageTo": "3",
       "price": "0",
@@ -46,102 +46,108 @@
       "id": 3
     },
     {
-      "title": "test",
-      "description": "test",
-      "date": "2018-11-10T17:00:23.000Z",
-      "ageFrom": "2",
+      "title": "test event",
+      "description": "work work work",
+      "date": "2018-11-17",
+      "ageFrom": "1",
       "ageTo": "3",
-      "price": "4",
-      "location": "Gran Via de les Corts Catalanes, Barcelona, Spain",
+      "price": "5",
+      "location": "Carrer d'Àvila, 27, 08005 Barcelona, Spain",
       "coords": [
-        41.39443839999999,
-        2.1753069000000096
+        41.3949147,
+        2.1979555000000346
       ],
       "id": 4
     },
     {
-      "title": "anotehr test",
-      "description": "",
-      "date": "2018-11-09T18:30:46.000Z",
-      "ageFrom": "",
-      "ageTo": "",
-      "price": "",
-      "location": "Carrer dels Tallers, 74b, 08001 Barcelona, Spain",
-      "coords": [
-        41.38518509999999,
-        2.165473499999962
-      ],
-      "id": 5
-    },
-    {
-      "title": "fsafsaf",
-      "description": "safds",
-      "date": "2018-11-08T18:30:25.451Z",
+      "title": "Really Cool Event",
+      "description": "barceloneta play date",
+      "date": "2018-11-14T10:00:40.000Z",
       "ageFrom": "2",
-      "ageTo": "4",
+      "ageTo": "5",
       "price": "3",
-      "location": "Carrer de la Canuda, 20, 08002 Barcelona, Spain",
+      "location": "Carrer de Monjo, 08003 Barcelona, Spain",
       "coords": [
-        41.38471379999999,
-        2.172481800000014
+        41.381556,
+        2.188178500000049
       ],
-      "id": 6
-    },
-    {
-      "title": "freddie play time",
-      "description": "",
-      "date": "2018-11-08T19:54:56.983Z",
-      "ageFrom": "",
-      "ageTo": "",
-      "price": "",
-      "location": "Plaça de Catalunya, 21, 08002 Barcelona, Spain",
-      "coords": [
-        41.3858788,
-        2.170833000000016
-      ],
+      "image": "",
       "id": 7
     },
     {
-      "title": "Freddies Mums party",
-      "description": "bring booze",
-      "date": "2018-11-10T19:30:21.000Z",
-      "ageFrom": "0",
-      "ageTo": "2",
-      "price": "5",
-      "location": "Gràcia, Barcelona, Spain",
-      "coords": [
-        41.4097751,
-        2.153920200000016
-      ],
-      "id": 8
-    },
-    {
-      "title": "bertas playtime",
-      "description": "sdafsad",
-      "date": "2018-11-08T20:27:59.700Z",
+      "title": "",
+      "description": "",
+      "date": "2018-11-10T11:57:39.519Z",
       "ageFrom": "",
       "ageTo": "",
       "price": "",
-      "location": "Pl. de Lesseps, Barcelona, Spain",
-      "coords": [
-        41.4069247,
-        2.1499114000000645
-      ],
+      "location": "",
+      "coords": {
+        "lat": "",
+        "lng": ""
+      },
+      "image": "",
+      "id": 8
+    },
+    {
+      "title": "",
+      "description": "",
+      "date": "2018-11-10T12:01:27.221Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "coords": {
+        "lat": "",
+        "lng": ""
+      },
+      "image": "",
       "id": 9
     },
     {
-      "title": "hjghgh",
-      "description": "asdf",
-      "date": "2018-11-17T08:34:39.000Z",
-      "ageFrom": "3",
-      "ageTo": "4",
-      "price": "3",
+      "title": "",
+      "description": "",
+      "date": "2018-11-10T12:02:53.064Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
       "location": "",
       "coords": {
-        "lat": null,
-        "lng": null
+        "lat": "",
+        "lng": ""
       },
+      "image": "",
       "id": 10
+    },
+    {
+      "title": "",
+      "description": "",
+      "date": "2018-11-10T12:04:39.502Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "coords": {
+        "lat": "",
+        "lng": ""
+      },
+      "image": "",
+      "id": 11
+    },
+    {
+      "title": "",
+      "description": "",
+      "date": "2018-11-10T12:06:31.164Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "",
+      "coords": {
+        "lat": "",
+        "lng": ""
+      },
+      "image": "",
+      "id": 12
     }
   ],
   "users": [
