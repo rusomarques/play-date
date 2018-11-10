@@ -46,108 +46,49 @@
       "id": 3
     },
     {
-      "title": "test event",
-      "description": "work work work",
-      "date": "2018-11-17",
-      "ageFrom": "1",
-      "ageTo": "3",
-      "price": "5",
-      "location": "Carrer d'Àvila, 27, 08005 Barcelona, Spain",
+      "title": "Poble Sec Play",
+      "description": "agdfgdsfgfsdgfdgdsfg",
+      "date": "2018-11-10T13:00:30.672Z",
+      "ageFrom": "3",
+      "ageTo": "4",
+      "price": "6",
+      "location": "08004 Barcelona, Spain",
       "coords": [
-        41.3949147,
-        2.1979555000000346
+        41.371526,
+        2.160474000000022
       ],
-      "id": 4
+      "image": "http://res.cloudinary.com/cjrrcrosr/image/upload/v1541858230/photos/z3de27i7kjjpkqyratnf.jpg",
+      "id": 16
     },
     {
       "title": "Really Cool Event",
-      "description": "barceloneta play date",
-      "date": "2018-11-14T10:00:40.000Z",
-      "ageFrom": "2",
-      "ageTo": "5",
-      "price": "3",
-      "location": "Carrer de Monjo, 08003 Barcelona, Spain",
+      "description": "dsaf",
+      "date": "2018-11-10T13:30:41.546Z",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "Avinguda Diagonal, a315, 08013 Barcelona, Spain",
       "coords": [
-        41.381556,
-        2.188178500000049
+        41.4008307,
+        2.1758597000000464
       ],
-      "image": "",
-      "id": 7
+      "image": "http://res.cloudinary.com/cjrrcrosr/image/upload/v1541859393/photos/vmke8s4xh8jpdvnwvvmr.jpg",
+      "id": 17
     },
     {
-      "title": "",
-      "description": "",
-      "date": "2018-11-10T11:57:39.519Z",
-      "ageFrom": "",
-      "ageTo": "",
-      "price": "",
-      "location": "",
-      "coords": {
-        "lat": "",
-        "lng": ""
-      },
-      "image": "",
-      "id": 8
-    },
-    {
-      "title": "",
-      "description": "",
-      "date": "2018-11-10T12:01:27.221Z",
-      "ageFrom": "",
-      "ageTo": "",
-      "price": "",
-      "location": "",
-      "coords": {
-        "lat": "",
-        "lng": ""
-      },
-      "image": "",
-      "id": 9
-    },
-    {
-      "title": "",
-      "description": "",
-      "date": "2018-11-10T12:02:53.064Z",
-      "ageFrom": "",
-      "ageTo": "",
-      "price": "",
-      "location": "",
-      "coords": {
-        "lat": "",
-        "lng": ""
-      },
-      "image": "",
-      "id": 10
-    },
-    {
-      "title": "",
-      "description": "",
-      "date": "2018-11-10T12:04:39.502Z",
-      "ageFrom": "",
-      "ageTo": "",
-      "price": "",
-      "location": "",
-      "coords": {
-        "lat": "",
-        "lng": ""
-      },
-      "image": "",
-      "id": 11
-    },
-    {
-      "title": "",
-      "description": "",
-      "date": "2018-11-10T12:06:31.164Z",
-      "ageFrom": "",
-      "ageTo": "",
-      "price": "",
-      "location": "",
-      "coords": {
-        "lat": "",
-        "lng": ""
-      },
-      "image": "",
-      "id": 12
+      "title": "Lukes Party Time",
+      "description": "Really fun playtime with Luke",
+      "date": "2018-11-10T15:00:12.795Z",
+      "ageFrom": "1",
+      "ageTo": "5",
+      "price": "10",
+      "location": "Plaça Eduard Maristany, 1, 08870 Sitges, Barcelona, Spain",
+      "coords": [
+        41.2390671,
+        1.8096937000000253
+      ],
+      "image": "https://res.cloudinary.com/cjrrcrosr/image/upload/c_scale,h_200,w_300/v1541859967/play.png",
+      "id": 18
     }
   ],
   "users": [

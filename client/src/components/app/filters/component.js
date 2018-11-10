@@ -78,6 +78,7 @@ export class component extends Component {
 
         <DatePicker
           className="datePicker"
+          placeholderText="Filter by date"
           // selected={this.props.date}
           onChange={this.handleChangeDate}
           dateFormat="DD/MM/YY"

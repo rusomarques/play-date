@@ -19,11 +19,12 @@ export class component extends React.Component {
     title: '',
     description: '',
     location: '',
-    coords: { lat: '', lng: '' },
+    coords: { lat: null, lng: null },
     ageFrom: '',
     ageTo: '',
     price: '',
-    image: '',
+    image:
+      'https://res.cloudinary.com/cjrrcrosr/image/upload/c_scale,h_200,w_300/v1541859967/play.png',
     error: null
   };
 
@@ -64,7 +65,8 @@ export class component extends React.Component {
       });
   };
 
-  handleUploadWidget = () => {
+  handleUploadWidget = event => {
+    event.preventDefault();
     window.cloudinary.openUploadWidget(
       {
         cloud_name: 'cjrrcrosr',
@@ -98,7 +100,8 @@ export class component extends React.Component {
 
           <DatePicker
             className="datePicker"
-            selected={this.state.date}
+            placeholderText="Date"
+            // selected={this.state.date}
             onChange={this.handleChange}
             showTimeSelect
             dateFormat="LLL"

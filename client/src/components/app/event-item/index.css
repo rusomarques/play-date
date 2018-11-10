@@ -12,4 +12,5 @@
 } */
 .single-event {
   display: flex;
+  min-width: 250px;
 }

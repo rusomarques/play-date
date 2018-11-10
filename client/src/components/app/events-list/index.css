@@ -1,6 +1,10 @@
 .events-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
+}
+
+.fields {
+  max-width: 300px;
 }

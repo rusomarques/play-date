@@ -43,6 +43,10 @@ export class component extends Component {
       <div className="navbar-container">
         <div className="logo-area">
           <Link to="/">
+            {/* <img
+              src="https://res.cloudinary.com/cjrrcrosr/image/upload/c_scale,w_200/v1541859967/play.png"
+              alt="logo"
+            /> */}
             <h1>Play Dates</h1>
           </Link>
         </div>
