@@ -103,8 +103,8 @@ export class component extends React.Component {
             placeholderText="Date"
             // selected={this.state.date}
             onChange={this.handleChange}
-            showTimeSelect
-            dateFormat="LLL"
+            showTimeSelect={false}
+            dateFormat="DD/MM/YY"
           />
           <Geosuggest
             placeholder="Address"
