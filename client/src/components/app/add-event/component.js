@@ -5,7 +5,6 @@ import DatePicker from 'react-datepicker';
 // import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import Geosuggest from 'react-geosuggest';
-
 import './index.css';
 
 export class component extends React.Component {
@@ -92,25 +91,38 @@ export class component extends React.Component {
     return (
       <div className="add-event">
         <form onSubmit={this.handleSubmitForm} className="form">
-          <button onClick={this.handleUploadWidget} className="upload-button">
-            Add Image
-          </button>
+          <h2>Add your Playdate </h2>
 
-          <input
-            name="title"
-            value={this.state.title}
-            onChange={this.handleChangeInput}
-            type="text"
-            placeholder="Title"
-          />
+          <div className="upload">
+            <i
+              onClick={this.handleUploadWidget}
+              className="fas fa-file-upload"
+              style={{
+                fontSize: '50px',
+                color: 'grey',
+                cursor: 'pointer',
+                margin: '20px'
+              }}
+            />
+            {'     '}
+            Upload Image
+          </div>
+          <div>
+            {/* <i
+              className="fas fa-calendar-alt"
+              style={{
+                fontSize: '30px'
+              }}
+            /> */}
 
-          <DatePicker
-            className="datePicker"
-            placeholderText="Date"
-            selected={this.state.eventdate}
-            onChange={this.handleChangeDate}
-            dateFormat="DD/MM/YY"
-          />
+            <DatePicker
+              className="datePicker"
+              placeholderText="Date"
+              selected={this.state.eventdate}
+              onChange={this.handleChangeDate}
+              dateFormat="DD/MM/YY"
+            />
+          </div>
 
           <DatePicker
             placeholderText="Time"
@@ -122,6 +134,13 @@ export class component extends React.Component {
             dateFormat="hh:mm"
             timeCaption="Time"
           />
+          <input
+            name="title"
+            value={this.state.title}
+            onChange={this.handleChangeInput}
+            type="text"
+            placeholder="Title"
+          />
 
           <Geosuggest
             placeholder="Address"
@@ -130,7 +149,7 @@ export class component extends React.Component {
             radius={20}
           />
 
-          <textarea
+          <input
             rows="4"
             cols="50"
             name="description"

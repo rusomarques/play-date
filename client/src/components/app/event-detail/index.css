@@ -1,13 +1,28 @@
 .detail-component {
   display: flex;
+  justify-content: space-evenly;
   margin-top: 30px;
   flex-wrap: wrap;
-}
-
-.map {
+  /* margin: 20px; */
   padding: 20px;
 }
 
-/* .event-listing {
-  float: right;
+/* .MuiPaper-root-54 {
+  max-width: 100%;
+  margin: 20px;
+  display: flex;
 } */
+
+.event-listing {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-detail {
+  margin: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}

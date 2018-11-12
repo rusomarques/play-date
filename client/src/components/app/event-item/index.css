@@ -10,9 +10,9 @@
 .single-event:hover {
   filter: brightness(85%);
 } */
-.single-event {
+/* .single-event {
   display: flex;
   min-width: 250px;
   padding: 10px;
   margin: 10px;
-}
+} */

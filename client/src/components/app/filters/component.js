@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 
+import './index.css';
+
 export class component extends Component {
   state = {
     eventdate: null,

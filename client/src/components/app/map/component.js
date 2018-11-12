@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import './index.css';
 
 export class component extends React.Component {
+  flag = true;
   state = {
     activeId: null
   };
@@ -17,6 +18,16 @@ export class component extends React.Component {
   handleCloseInfoBox = () => {
     this.setState({ activeId: null });
   };
+
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     this.flag = false;
+  //   }, 1000);
+  // }
+
+  // shouldComponentUpdate(prevProps, prevState) {
+  //   return this.flag;
+  // }
 
   render() {
     const { events } = this.props;
@@ -71,7 +82,7 @@ export class component extends React.Component {
             <div
               style={{
                 height: `400px`,
-                width: this.props.fullWidth ? '100%' : '500px'
+                width: this.props.fullWidth ? '100%' : '400px'
               }}
             />
           }

@@ -51,7 +51,8 @@ export class component extends React.Component {
                     {moment(
                       this.props.event.eventdate +
                         ' ' +
-                        this.props.event.eventtime
+                        this.props.event.eventtime +
+                        'Z'
                     ).format('h:mm a')}
                   </h3>
                 </div>
