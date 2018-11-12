@@ -9,18 +9,18 @@ import './index.css';
 
 export class component extends Component {
   state = {
-    date: moment(),
+    eventdate: moment(),
     title: '',
     description: '',
     location: '',
-    ageFrom: '',
-    ageTo: '',
+    agefrom: '',
+    ageto: '',
     price: '',
     error: null
   };
 
-  handleChange = date => {
-    this.setState({ date: date });
+  handleChange = eventdate => {
+    this.setState({ eventdate: eventdate });
   };
 
   handleChangeInput = event => {
@@ -32,7 +32,7 @@ export class component extends Component {
     const age = event.target.value;
     this.props.setAge(age);
     if (age) {
-      this.props.getEvents({ ageFrom: age });
+      this.props.getEvents({ agefrom: age });
     } else {
       this.props.getEvents();
     }

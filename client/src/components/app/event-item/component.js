@@ -13,8 +13,8 @@ export class component extends React.Component {
       eventdate: PropTypes.string,
       eventtime: PropTypes.string,
       title: PropTypes.string,
-      ageFrom: PropTypes.string,
-      ageTo: PropTypes.string,
+      agefrom: PropTypes.string,
+      ageto: PropTypes.string,
       price: PropTypes.price
     }),
     getEvents: PropTypes.func,
@@ -42,7 +42,7 @@ export class component extends React.Component {
 
                 <div className="date">
                   <h3>
-                    {moment(this.props.event.eventdate).format(
+                    {moment(new Date(this.props.event.eventdate)).format(
                       'dddd, MMMM Do YYYY'
                     )}
                   </h3>

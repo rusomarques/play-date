@@ -8,26 +8,42 @@ const transformEvent = item => {
   return Object.assign({}, item.toJSON(), { coords: [item.lng, item.lat] });
 };
 
-const buildWhereQuery = (query, ageFrom) => {
+const buildWhereQuery = (query, age, date, free) => {
   const where = {};
   if (query) {
     where.title = {
-      [Op.like]: `%${query}%`
+      [Op.iLike]: `%${query}%`
     };
     // where.description = {
     //   [Op.like]: `%${query}%`
     // };
   }
-  if (ageFrom) {
-    // Do something else.
+
+  if (age) {
+    where.agefrom = {
+      [Op.eq]: `${age}`
+    };
+  }
+
+  if (date) {
+    where.eventdate = {
+      [Op.eq]: `${date}`
+    };
+  }
+  if (free) {
+    where.price = {
+      [Op.eq]: 0
+    };
   }
   return where;
 };
 
 eventsController.getAll = (req, res) => {
   const query = req.query.q;
-  const ageFrom = req.query.ageFrom;
-  const where = buildWhereQuery(query, ageFrom);
+  const agefrom = req.query.agefrom;
+  const date = req.query.eventdate;
+  const free = req.query.free;
+  const where = buildWhereQuery(query, agefrom, date, free);
   console.log('where', where);
   return db.eventsModel.findAll({ where: where }).then(items => {
     const transformedEvents = items.map(transformEvent);

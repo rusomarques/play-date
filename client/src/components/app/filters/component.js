@@ -4,12 +4,12 @@ import moment from 'moment';
 
 export class component extends Component {
   state = {
-    date: moment(),
+    eventdate: moment(),
     title: '',
     description: '',
     location: '',
-    ageFrom: '',
-    ageTo: '',
+    agefrom: '',
+    ageto: '',
     price: '',
     searchText: '',
     free: '',
@@ -50,13 +50,13 @@ export class component extends Component {
     }
     const queryObject = {};
     if (date) {
-      queryObject.date = date.format('YYYY-MM-DD');
+      queryObject.eventdate = date.format('YYYY-MM-DD');
     }
     if (free) {
       queryObject.price = 0;
     }
     if (age || age === 0) {
-      queryObject.ageFrom = age;
+      queryObject.agefrom = age;
     }
     if (searchText) {
       queryObject.q = searchText;
