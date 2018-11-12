@@ -15,21 +15,26 @@ export class component extends React.Component {
   };
 
   state = {
-    date: moment(),
+    eventdate: null,
+    eventtime: null,
     title: '',
     description: '',
     location: '',
     coords: { lat: null, lng: null },
-    ageFrom: '',
-    ageTo: '',
+    agefrom: '',
+    ageto: '',
     price: '',
     image:
       'https://res.cloudinary.com/cjrrcrosr/image/upload/c_scale,h_200,w_300/v1541859967/play.png',
     error: null
   };
 
-  handleChange = date => {
-    this.setState({ date: date });
+  handleChangeDate = eventdate => {
+    this.setState({ eventdate: eventdate });
+  };
+
+  handleChangeTime = eventtime => {
+    this.setState({ eventtime: eventtime });
   };
 
   handleSuggestSelect = place => {
@@ -51,9 +56,10 @@ export class component extends React.Component {
       .createEvent({
         title: this.state.title,
         description: this.state.description,
-        date: this.state.date,
-        ageFrom: this.state.ageFrom,
-        ageTo: this.state.ageTo,
+        eventdate: this.state.eventdate,
+        eventtime: this.state.eventtime,
+        agefrom: this.state.agefrom,
+        ageto: this.state.ageto,
         price: this.state.price,
         location: this.state.location,
         coords: this.state.coords,
@@ -101,11 +107,22 @@ export class component extends React.Component {
           <DatePicker
             className="datePicker"
             placeholderText="Date"
-            // selected={this.state.date}
-            onChange={this.handleChange}
-            showTimeSelect={false}
+            selected={this.state.eventdate}
+            onChange={this.handleChangeDate}
             dateFormat="DD/MM/YY"
           />
+
+          <DatePicker
+            placeholderText="Time"
+            selected={this.state.eventtime}
+            onChange={this.handleChangeTime}
+            showTimeSelect
+            showTimeSelectOnly
+            timeIntervals={15}
+            dateFormat="LT"
+            timeCaption="Time"
+          />
+
           <Geosuggest
             placeholder="Address"
             location={new google.maps.LatLng(41.3851, 2.1734)}
@@ -130,15 +147,15 @@ export class component extends React.Component {
             placeholder="Price €"
           />
           <input
-            name="ageFrom"
-            value={this.state.ageFrom}
+            name="agefrom"
+            value={this.state.agefrom}
             onChange={this.handleChangeInput}
             type="number"
             placeholder="Age From"
           />
           <input
-            name="ageTo"
-            value={this.state.ageTo}
+            name="ageto"
+            value={this.state.ageto}
             onChange={this.handleChangeInput}
             type="number"
             placeholder="Age To"

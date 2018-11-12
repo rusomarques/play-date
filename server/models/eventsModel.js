@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) =>
         type: DataTypes.DATE
         // allowNull: false
       },
+      eventtime: {
+        type: DataTypes.DATE
+        // allowNull: false
+      },
       location: {
         type: DataTypes.STRING
         // allowNull: false
@@ -40,11 +44,11 @@ module.exports = (sequelize, DataTypes) =>
         // allowNull: false
       },
       agefrom: {
-        type: DataTypes.INTEGER
+        type: DataTypes.BIGINT
         // allowNull: false
       },
       ageto: {
-        type: DataTypes.INTEGER
+        type: DataTypes.BIGINT
         // allowNull: false
       }
     },

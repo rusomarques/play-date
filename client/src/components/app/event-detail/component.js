@@ -37,14 +37,36 @@ export class component extends React.Component {
                 <h3>{this.props.event.location}</h3>
                 <div className="date">
                   <h3>
-                    {moment(this.props.event.date).format('dddd, MMMM Do YYYY')}
-                    <br />
-                    {moment(this.props.event.date).format('h:mm a')}
+                    {moment(this.props.event.eventdate).format(
+                      'dddd, MMMM Do YYYY'
+                    )}
+                    {/* {moment(new Date(this.props.event.eventdate)).format(
+                      'dddd, MMMM Do YYYY'
+                    )} */}
                   </h3>
                 </div>
 
-                <h3>Age From: {this.props.event.ageFrom}</h3>
-                <h3>Age To: {this.props.event.ageTo}</h3>
+                <div className="time">
+                  <h3>
+                    {moment(
+                      this.props.event.eventdate +
+                        ' ' +
+                        this.props.event.eventtime
+                    ).format('h:mm a')}
+                  </h3>
+                </div>
+                {/* <div className="date">
+                  <h3>
+                    {moment(this.props.event.eventdate).format(
+                      'dddd, MMMM Do YYYY'
+                    )}
+                    <br />
+                    {moment(this.props.event.eventtime).format('h:mm a')}
+                  </h3>
+                </div> */}
+
+                <h3>Age From: {this.props.event.agefrom}</h3>
+                <h3>Age To: {this.props.event.ageto}</h3>
 
                 <h3>Price: {this.props.event.price}</h3>
               </CardContent>

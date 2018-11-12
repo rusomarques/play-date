@@ -10,8 +10,8 @@ import './index.css';
 export class component extends React.Component {
   static propTypes = {
     event: PropTypes.shape({
-      date: PropTypes.string,
-      location: PropTypes.string,
+      eventdate: PropTypes.string,
+      eventtime: PropTypes.string,
       title: PropTypes.string,
       ageFrom: PropTypes.string,
       ageTo: PropTypes.string,
@@ -26,6 +26,8 @@ export class component extends React.Component {
   };
 
   render() {
+    console.log(this.props.event);
+
     return (
       <Card>
         <CardActionArea>
@@ -40,9 +42,19 @@ export class component extends React.Component {
 
                 <div className="date">
                   <h3>
-                    {moment(this.props.event.date).format('dddd, MMMM Do YYYY')}
-                    <br />
-                    {moment(this.props.event.date).format('h:mm a')}
+                    {moment(this.props.event.eventdate).format(
+                      'dddd, MMMM Do YYYY'
+                    )}
+                  </h3>
+                </div>
+
+                <div className="time">
+                  <h3>
+                    {moment(
+                      this.props.event.eventdate +
+                        ' ' +
+                        this.props.event.eventtime
+                    ).format('h:mm a')}
                   </h3>
                 </div>
 
@@ -50,12 +62,12 @@ export class component extends React.Component {
                   <h3> {this.props.event.location}</h3>
                 </div>
 
-                <div className="ageFrom">
-                  <h3>Age From: {this.props.event.ageFrom}</h3>
+                <div className="agefrom">
+                  <h3>Age From: {this.props.event.agefrom}</h3>
                 </div>
 
-                <div className="ageTo">
-                  <h3>Age To: {this.props.event.ageTo}</h3>
+                <div className="ageto">
+                  <h3>Age To: {this.props.event.ageto}</h3>
                 </div>
 
                 <div className="price">

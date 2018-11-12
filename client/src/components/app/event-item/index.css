@@ -13,4 +13,6 @@
 .single-event {
   display: flex;
   min-width: 250px;
+  padding: 10px;
+  margin: 10px;
 }

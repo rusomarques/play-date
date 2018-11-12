@@ -44,19 +44,22 @@ eventsController.getEvent = (req, res) => {
   });
 };
 eventsController.createEvent = (req, res) => {
+  console.log(req.body);
   const event = req.body;
   return db.eventsModel
     .create({
       image: event.image,
       title: event.title,
-      date: event.date,
+      eventdate: event.eventdate,
+      eventtime: event.eventtime,
+
       location: event.location,
       lng: event.coords[0],
       lat: event.coords[1],
       description: event.description,
       price: event.price,
-      ageFrom: event.ageFrom,
-      ageTo: event.ageTo
+      agefrom: event.agefrom,
+      ageto: event.ageto
     })
     .then(item => {
       res.sendStatus(200);
@@ -64,19 +67,4 @@ eventsController.createEvent = (req, res) => {
     });
 };
 
-// eventsController.createEvent = async function(req, res) {
-//   try {
-//     const newEvent = await eventsModel.set(req.body); //set or create??
-//     res.status(201);
-//     return res.send(newEvent);
-//   } catch (error) {
-//     res.status(400);
-//     res.send(error);
-//   }
-// };
-
 module.exports = eventsController;
-
-// eventsController.getAll = (req, res) => {
-//   res.json(eventsModel.getAll());
-// };
