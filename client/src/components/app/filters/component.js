@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
-import moment from 'moment';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
 
 export class component extends Component {
   state = {
-    eventdate: moment(),
+    eventdate: null,
     title: '',
     description: '',
     location: '',
@@ -14,7 +15,8 @@ export class component extends Component {
     searchText: '',
     free: '',
     age: '',
-    error: null
+    error: null,
+    checked: true
   };
 
   handleChangeDate = date => {
@@ -32,6 +34,9 @@ export class component extends Component {
     console.log('handleChangeFree', checked);
     this.props.setFree(checked);
   };
+  // handleChangeFree = name => event => {
+  //   this.setState({ [name]: event.target.checked });
+  // };
 
   handleSearch = event => {
     const searchText = event.target.value;
@@ -61,7 +66,6 @@ export class component extends Component {
     if (searchText) {
       queryObject.q = searchText;
     }
-    console.log('queryObject', queryObject);
     this.props.getEvents(queryObject);
   }
 
@@ -79,7 +83,7 @@ export class component extends Component {
         <DatePicker
           className="datePicker"
           placeholderText="Filter by date"
-          // selected={this.props.date}
+          selected={this.props.date}
           onChange={this.handleChangeDate}
           dateFormat="DD/MM/YY"
         />
@@ -90,15 +94,26 @@ export class component extends Component {
           type="text"
           placeholder="Filter by Age"
         />
-        <label>
-          <input
-            type="checkbox"
-            label="free?"
-            checked={this.props.free}
-            onChange={this.handleChangeFree}
-          />
-          Free
-        </label>
+
+        {/* <label for="test">Only Free Events</label>
+        <label class="myCheckbox">
+          <input type="checkbox" name="test"  checked={this.props.free}
+            onChange={this.handleChangeFree}/>
+          <span />
+        </label> */}
+        {/* <FormGroup> */}
+        <FormControlLabel
+          className="toggle"
+          control={
+            <Switch
+              checked={this.props.checked}
+              onChange={this.handleChangeFree}
+              value="checked"
+            />
+          }
+          label="Only Free Events"
+        />
+        {/* </FormGroup> */}
       </div>
     );
   }

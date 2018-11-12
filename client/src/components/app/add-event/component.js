@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-datepicker';
-import moment from 'moment';
+// import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 import Geosuggest from 'react-geosuggest';
 
@@ -30,7 +30,7 @@ export class component extends React.Component {
   };
 
   handleChangeDate = eventdate => {
-    this.setState({ eventdate: eventdate });
+    this.setState({ eventdate });
   };
 
   handleChangeTime = eventtime => {
@@ -56,7 +56,7 @@ export class component extends React.Component {
       .createEvent({
         title: this.state.title,
         description: this.state.description,
-        eventdate: this.state.eventdate,
+        eventdate: this.state.eventdate.format('YYYY-MM-DD'),
         eventtime: this.state.eventtime,
         agefrom: this.state.agefrom,
         ageto: this.state.ageto,
@@ -119,7 +119,7 @@ export class component extends React.Component {
             showTimeSelect
             showTimeSelectOnly
             timeIntervals={15}
-            dateFormat="LT"
+            dateFormat="hh:mm"
             timeCaption="Time"
           />
 

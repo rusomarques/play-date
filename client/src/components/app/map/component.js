@@ -11,12 +11,10 @@ export class component extends React.Component {
   };
 
   handleMarkerClick = el => () => {
-    console.log('event', el);
     this.setState({ activeId: el.id });
   };
 
   handleCloseInfoBox = () => {
-    console.log('handleCloseInfoBox');
     this.setState({ activeId: null });
   };
 

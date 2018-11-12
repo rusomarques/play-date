@@ -26,8 +26,6 @@ export class component extends React.Component {
   };
 
   render() {
-    console.log(this.props.event);
-
     return (
       <Card>
         <CardActionArea>
