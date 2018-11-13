@@ -8,6 +8,8 @@ export const setAge = age => {
 };
 
 export const setFree = value => {
+  console.log('value', typeof value);
+
   return {
     type: 'SET_FREE',
     payload: {

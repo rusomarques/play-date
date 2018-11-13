@@ -15,7 +15,7 @@ export class component extends Component {
     ageto: '',
     price: '',
     searchText: '',
-    free: '',
+    free: false,
     age: '',
     error: null,
     checked: true
@@ -59,8 +59,8 @@ export class component extends Component {
     if (date) {
       queryObject.eventdate = date.format('YYYY-MM-DD');
     }
-    if (free) {
-      queryObject.price = 0;
+    if (free === 'free') {
+      queryObject.price = '0';
     }
     if (age || age === 0) {
       queryObject.agefrom = age;

@@ -31,8 +31,10 @@ const buildWhereQuery = (query, age, date, free) => {
     };
   }
   if (free) {
+    console.log('hellllo');
+
     where.price = {
-      [Op.eq]: 0
+      [Op.eq]: '0'
     };
   }
   return where;
@@ -42,9 +44,11 @@ eventsController.getAll = (req, res) => {
   const query = req.query.q;
   const agefrom = req.query.agefrom;
   const date = req.query.eventdate;
-  const free = req.query.free;
+  const free = req.query.free === 'true' ? true : false;
+  console.log('freee', free);
+
   const where = buildWhereQuery(query, agefrom, date, free);
-  console.log('where', where);
+  // console.log('where', where);
   return db.eventsModel.findAll({ where: where }).then(items => {
     const transformedEvents = items.map(transformEvent);
     res.status(200);
@@ -60,7 +64,6 @@ eventsController.getEvent = (req, res) => {
   });
 };
 eventsController.createEvent = (req, res) => {
-  console.log(req.body);
   const event = req.body;
   return db.eventsModel
     .create({
