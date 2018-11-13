@@ -44,7 +44,8 @@ eventsController.getAll = (req, res) => {
   const query = req.query.q;
   const agefrom = req.query.agefrom;
   const date = req.query.eventdate;
-  const free = req.query.free === 'true' ? true : false;
+  // const free = req.query.free === 'true' ? true : false;
+  const free = req.query.price;
   console.log('freee', free);
 
   const where = buildWhereQuery(query, agefrom, date, free);

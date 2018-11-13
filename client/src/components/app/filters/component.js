@@ -59,7 +59,7 @@ export class component extends Component {
     if (date) {
       queryObject.eventdate = date.format('YYYY-MM-DD');
     }
-    if (free === 'free') {
+    if (free === true) {
       queryObject.price = '0';
     }
     if (age || age === 0) {
