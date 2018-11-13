@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import { Map } from '../map';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 import './index.css';
 
@@ -23,68 +25,128 @@ export class component extends React.Component {
     return (
       <div>
         <div className="detail-component">
-          <div>
-            <div className="event-listing">
-              <img src={this.props.event.image} alt="Event" />
+          <Card>
+            <CardContent>
+              <div className="event-listing">
+                <img
+                  src={this.props.event.image}
+                  alt="Event"
+                  style={{
+                    maxWidth: '400px',
+                    alignSelf: 'center'
+                  }}
+                />
 
-              <h1 className="title-detail">{this.props.event.title}</h1>
+                <h2 className="title-detail">{this.props.event.title}</h2>
 
-              <div className="date">
-                <h3>
-                  {moment(this.props.event.eventdate).format(
-                    'dddd, MMMM Do YYYY'
+                <div className="date-time">
+                  <h3>
+                    <i
+                      class="fas fa-calendar-alt"
+                      style={{
+                        fontSize: '30px',
+                        color: 'grey',
+                        margin: '20px'
+                      }}
+                    />
+                    {moment(this.props.event.eventdate).format(
+                      'dddd, MMMM Do YYYY'
+                    )}
+                  </h3>
+                  <h3>
+                    <i
+                      class="fas fa-clock"
+                      style={{
+                        fontSize: '30px',
+                        color: 'grey',
+                        margin: '20px'
+                      }}
+                    />
+                    {moment(
+                      this.props.event.eventdate +
+                        ' ' +
+                        this.props.event.eventtime
+                    ).format('h:mm a')}
+                  </h3>
+                </div>
+                <div className="age-price">
+                  <i
+                    class="fas fa-child"
+                    style={{
+                      fontSize: '30px',
+                      color: 'grey',
+                      margin: '20px'
+                    }}
+                  />
+                  <h3>
+                    Age From: {this.props.event.agefrom} -{' '}
+                    {this.props.event.ageto}{' '}
+                  </h3>
+                </div>
+                <div className="price">
+                  <i
+                    class="fas fa-euro-sign"
+                    style={{
+                      fontSize: '30px',
+                      color: 'grey',
+                      margin: '20px'
+                    }}
+                  />
+                  {this.props.event.price === '0' ? (
+                    <h3>Free</h3>
+                  ) : (
+                    <h3>{this.props.event.price} Euros</h3>
                   )}
-                </h3>
+                </div>
+
+                <h3> {this.props.event.description}</h3>
               </div>
-
-              <div className="time">
-                <h3>
-                  Time:
-                  {moment(
-                    this.props.event.eventdate +
-                      ' ' +
-                      this.props.event.eventtime
-                  ).format('h:mm a')}
-                </h3>
-              </div>
-
-              <h3> Description: {this.props.event.description}</h3>
-
-              <h3>Age From: {this.props.event.agefrom}</h3>
-              <h3>Age To: {this.props.event.ageto}</h3>
-
-              <h3>Price: {this.props.event.price} Euros</h3>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
           <div className="map">
-            <Map events={[this.props.event]} />
-            <h3>{this.props.event.location}</h3>
+            <Card>
+              <CardContent className="map-card">
+                <div className="map-detail">
+                  <Map events={[this.props.event]} />
+                </div>
+                <div className="location-details">
+                  <div className="address">
+                    <i
+                      class="fas fa-map-marker-alt"
+                      style={{
+                        fontSize: '40px',
+                        color: 'grey',
+                        margin: '20px'
+                      }}
+                    />
+                    {this.props.event.location}
+                  </div>
+                  <div classname="website">
+                    <i
+                      class="fas fa-at"
+                      style={{
+                        fontSize: '40px',
+                        color: 'grey',
+                        margin: '20px'
+                      }}
+                    />
+                    www.myplaydate.com
+                  </div>
 
-            <div classname="website">
-              <i
-                class="fas fa-at"
-                style={{
-                  fontSize: '40px',
-                  color: 'grey',
-                  cursor: 'pointer',
-                  margin: '20px'
-                }}
-              />
-              www.myplaydate.com
-            </div>
-
-            <div className="phone">
-              <i
-                class="fas fa-phone-square"
-                style={{
-                  fontSize: '40px',
-                  color: 'grey',
-                  cursor: 'pointer',
-                  margin: '20px'
-                }}
-              />
-              +34 654 321 012
-            </div>
+                  <div className="phone">
+                    <i
+                      class="fas fa-phone-square"
+                      style={{
+                        fontSize: '40px',
+                        color: 'grey',
+                        margin: '20px'
+                      }}
+                    />
+                    +34 654 321 012
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

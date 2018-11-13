@@ -1,7 +1,7 @@
 .detail-component {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 30px;
+  margin-top: 10px;
   flex-wrap: wrap;
   /* margin: 20px; */
   padding: 20px;
@@ -16,7 +16,13 @@
 .event-listing {
   display: flex;
   flex-direction: column;
+  max-width: 500px;
 }
+
+/* .event-listing img {
+  border-radius: 50%;
+  height: 200px;
+} */
 
 .title-detail {
   margin: 20px;
@@ -25,4 +31,19 @@
 .info {
   display: flex;
   flex-direction: column;
+}
+
+/* .map-detail {
+  max-width: 500px;
+  align-self: center;
+} */
+
+.map-card {
+  max-width: 500px;
+  align-self: center;
+}
+.date-time,
+.age-price,
+.price {
+  display: flex;
 }

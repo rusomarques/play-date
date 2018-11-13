@@ -62,15 +62,22 @@ export class component extends React.Component {
                 </div>
 
                 <div className="agefrom">
-                  <h3>Age From: {this.props.event.agefrom}</h3>
+                  <h3>
+                    Age From: {this.props.event.agefrom} -{' '}
+                    {this.props.event.ageto}
+                  </h3>
                 </div>
 
-                <div className="ageto">
+                {/* <div className="ageto">
                   <h3>Age To: {this.props.event.ageto}</h3>
-                </div>
+                </div> */}
 
                 <div className="price">
-                  <h3>Price: {this.props.event.price}</h3>
+                  {this.props.event.price === '0' ? (
+                    <h3>Price: Free</h3>
+                  ) : (
+                    <h3>Price: {this.props.event.price}</h3>
+                  )}
                 </div>
               </div>
             </CardContent>
