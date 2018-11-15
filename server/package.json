@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch ./db.json"
+    "start": "json-server --watch ./db.json",
+    "format:check": "prettier --list-different \"**/*.{js, jsx, css, json}\""
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,9 @@
     "pg": "^7.6.1",
     "pg-promise": "^8.5.2",
     "sequelize": "^4.41.1"
+  },
+  "devDependencies": {
+    "husky": "^1.1.4",
+    "prettier": "^1.15.2"
   }
 }
