@@ -91,21 +91,6 @@
       "id": 18
     },
     {
-      "title": "berts",
-      "description": "",
-      "date": "2018-11-10T16:30:08.347Z",
-      "ageFrom": "",
-      "ageTo": "",
-      "price": "",
-      "location": "",
-      "coords": {
-        "lat": null,
-        "lng": null
-      },
-      "image": "http://res.cloudinary.com/cjrrcrosr/image/upload/v1541868598/photos/j41pakhcxlezhctechuj.jpg",
-      "id": 19
-    },
-    {
       "title": "codeworks",
       "description": "fun",
       "date": "2018-11-10T17:00:07.755Z",
