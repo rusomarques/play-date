@@ -35,7 +35,7 @@ export class component extends React.Component {
     if (!events || events.length === 0) {
       return 'No events';
     }
-    const GoogleMapExample = withGoogleMap(props => {
+    const GoogleMapExample = withGoogleMap(() => {
       const barcelonaCoords = { lat: 41.3851, lng: 2.1734 };
       const defaultCenter =
         events.length === 1
@@ -54,7 +54,7 @@ export class component extends React.Component {
                   // <InfoBox onCloseClick={this.handleCloseInfoBox}>
                   <InfoBox
                     options={{ closeBoxURL: ``, enableEventPropagation: true }}
-                    onCloseClick={() => console.log('close!')}
+                    onCloseClick={() => {}}
                   >
                     <div
                       style={{
