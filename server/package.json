@@ -6,7 +6,8 @@
   "scripts": {
     "start": "json-server --watch ./db.json",
     "lint": "eslint \"**/*.{js,jsx}\"",
-    "format:check": "prettier --list-different \"**/*.{js, jsx, css, json}\""
+    "format:check": "prettier --list-different \"**/*.{js, jsx, css, json}\"",
+    "recreateDb": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
   },
   "author": "",
   "license": "ISC",
@@ -17,11 +18,18 @@
     "json-server": "^0.14.0",
     "pg": "^7.6.1",
     "pg-promise": "^8.5.2",
-    "sequelize": "^4.41.1"
+    "sequelize": "^4.41.1",
+    "sequelize-cli": "^5.3.0"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
     "husky": "^1.1.4",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./server/node_modules/cz-conventional-changelog"
+    }
   }
 }
