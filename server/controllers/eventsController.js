@@ -50,7 +50,7 @@ eventsController.getAll = (req, res) => {
 
   const where = buildWhereQuery(query, agefrom, date, free);
   // console.log('where', where);
-  return db.eventsModel
+  return db.event
     .findAll({ where: where }, { order: [['eventdate', 'ASC']] })
     .then(items => {
       const transformedEvents = items.map(transformEvent);
