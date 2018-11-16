@@ -71,7 +71,6 @@ eventsController.createEvent = (req, res) => {
       title: event.title,
       eventdate: event.eventdate,
       eventtime: event.eventtime,
-
       location: event.location,
       lng: event.coords[0],
       lat: event.coords[1],
@@ -81,8 +80,7 @@ eventsController.createEvent = (req, res) => {
       ageto: event.ageto
     })
     .then(item => {
-      res.sendStatus(200);
-      return res.send(item);
+      return res.send(item).status(200);
     });
 };
 
