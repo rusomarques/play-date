@@ -31,8 +31,6 @@ const buildWhereQuery = (query, age, date, free) => {
     };
   }
   if (free) {
-    console.log('hellllo');
-
     where.price = {
       [Op.eq]: '0'
     };
@@ -46,7 +44,6 @@ eventsController.getAll = (req, res) => {
   const date = req.query.eventdate;
   // const free = req.query.free === 'true' ? true : false;
   const free = req.query.price;
-  console.log('freee', free);
 
   const where = buildWhereQuery(query, agefrom, date, free);
   // console.log('where', where);
