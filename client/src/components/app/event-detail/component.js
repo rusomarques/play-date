@@ -42,7 +42,7 @@ export class component extends React.Component {
                 <div className="date-time">
                   <h3>
                     <i
-                      class="fas fa-calendar-alt"
+                      className="fas fa-calendar-alt"
                       style={{
                         fontSize: '30px',
                         color: 'grey',
@@ -55,7 +55,7 @@ export class component extends React.Component {
                   </h3>
                   <h3>
                     <i
-                      class="fas fa-clock"
+                      className="fas fa-clock"
                       style={{
                         fontSize: '30px',
                         color: 'grey',
@@ -71,7 +71,7 @@ export class component extends React.Component {
                 </div>
                 <div className="age-price">
                   <i
-                    class="fas fa-child"
+                    className="fas fa-child"
                     style={{
                       fontSize: '30px',
                       color: 'grey',
@@ -85,7 +85,7 @@ export class component extends React.Component {
                 </div>
                 <div className="price">
                   <i
-                    class="fas fa-euro-sign"
+                    className="fas fa-euro-sign"
                     style={{
                       fontSize: '30px',
                       color: 'grey',
@@ -112,7 +112,7 @@ export class component extends React.Component {
                 <div className="location-details">
                   <div className="address">
                     <i
-                      class="fas fa-map-marker-alt"
+                      className="fas fa-map-marker-alt"
                       style={{
                         fontSize: '40px',
                         color: 'grey',
@@ -121,9 +121,9 @@ export class component extends React.Component {
                     />
                     {this.props.event.location}
                   </div>
-                  <div classname="website">
+                  <div className="website">
                     <i
-                      class="fas fa-at"
+                      className="fas fa-at"
                       style={{
                         fontSize: '40px',
                         color: 'grey',
@@ -135,7 +135,7 @@ export class component extends React.Component {
 
                   <div className="phone">
                     <i
-                      class="fas fa-phone-square"
+                      className="fas fa-phone-square"
                       style={{
                         fontSize: '40px',
                         color: 'grey',

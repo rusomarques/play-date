@@ -2,7 +2,7 @@
 const data = require('./db.json');
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: queryInterface => {
     const events = data.events.map(event => ({
       id: event.id,
       title: event.title,
@@ -22,8 +22,8 @@ module.exports = {
     return queryInterface.bulkInsert('events', events, {});
   },
 
-  down: (queryInterface, Sequelize) => {
-   return queryInterface.bulkDelete('events', null, {});
+  down: queryInterface => {
+    return queryInterface.bulkDelete('events', null, {});
   }
 };
 
