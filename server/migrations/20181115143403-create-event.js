@@ -15,11 +15,11 @@ module.exports = {
         type: Sequelize.STRING
       },
       eventdate: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false
       },
       eventtime: {
-        type: Sequelize.TIME
+        type: Sequelize.DATE
       },
       location: {
         type: Sequelize.STRING,

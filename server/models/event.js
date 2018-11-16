@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       image: DataTypes.STRING,
       eventdate: DataTypes.DATE,
-      eventtime: DataTypes.DATE,
+      eventtime: DataTypes.DATEONLY,
       location: DataTypes.STRING,
       lng: DataTypes.FLOAT,
       lat: DataTypes.FLOAT,
