@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       eventdate: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: false
       },
       eventtime: {

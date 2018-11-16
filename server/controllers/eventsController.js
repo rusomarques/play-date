@@ -27,7 +27,7 @@ const buildWhereQuery = (query, age, date, free) => {
 
   if (date) {
     where.eventdate = {
-      [Op.eq]: `${date}`
+      [Op.eq]: date
     };
   }
   if (free) {
