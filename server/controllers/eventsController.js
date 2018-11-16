@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const eventsController = {};
 const Op = Sequelize.Op;
-// const eventsModel = require('../models/eventsModel');
+// const event = require('../models/event');
 const db = require('../models');
 
 const transformEvent = item => {
@@ -57,7 +57,7 @@ eventsController.getAll = (req, res) => {
 };
 
 eventsController.getEvent = (req, res) => {
-  return db.eventsModel.findById(req.params.id).then(item => {
+  return db.event.findById(req.params.id).then(item => {
     const transformedEvent = transformEvent(item);
     res.status(200);
     return res.send(transformedEvent);
@@ -65,7 +65,7 @@ eventsController.getEvent = (req, res) => {
 };
 eventsController.createEvent = (req, res) => {
   const event = req.body;
-  return db.eventsModel
+  return db.event
     .create({
       image: event.image,
       title: event.title,
