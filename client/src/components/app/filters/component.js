@@ -27,13 +27,13 @@ export class component extends Component {
 
   handleFilterAge = event => {
     const age = event.target.value;
-    console.log('handleFilterAge', age);
+    // console.log('handleFilterAge', age);
     this.props.setAge(age);
   };
 
   handleChangeFree = event => {
     const checked = event.target.checked;
-    console.log('handleChangeFree', checked);
+    // console.log('handleChangeFree', checked);
     this.props.setFree(checked);
   };
   // handleChangeFree = name => event => {
