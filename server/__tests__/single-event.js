@@ -5,8 +5,8 @@ module.exports = {
     const defaultProps = {
       title: 'mock p',
       image: 'mock_image.jpg',
-      eventdate: '2018-11-16',
-      eventtime: '2018-11-16',
+      eventdate: '2018-11-16 09:00',
+      eventtime: '2018-11-16 09:00',
       location: 'mock location',
       lng: '42.23445',
       lat: '2.3345',
@@ -15,7 +15,6 @@ module.exports = {
       agefrom: '3',
       ageto: '8'
     };
-    
 
     return db.event.create(defaultProps);
   },
