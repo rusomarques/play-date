@@ -93,8 +93,9 @@ export class component extends Component {
         <input
           value={this.props.age}
           onChange={this.handleFilterAge}
-          type="text"
+          type="number"
           placeholder="Filter by Age"
+          min="0"
         />
 
         {/* <label for="test">Only Free Events</label>
