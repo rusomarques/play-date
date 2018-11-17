@@ -7,12 +7,17 @@ const mocks = {
     price: 2
   },
   eventWithErrors: {
-    title: null,
+    title: 'aa',
     eventdate: '2018-11-05 23:00',
-    location: '',
+    location: '   ',
     coords: [41.3858788, 2.170833000000016],
     price: 'fsdafs'
-  }
+  },
+  messageErrors: [
+    'The title must be between 3 and 40 characters',
+    'Please set the location of the event',
+    'Price should be a number'
+  ]
 };
 
 module.exports = mocks;

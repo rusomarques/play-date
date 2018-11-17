@@ -38,7 +38,6 @@ module.exports = {
       },
       price: {
         type: Sequelize.FLOAT,
-        allowNull: false,
         defaultValue: 0
       },
       agefrom: {

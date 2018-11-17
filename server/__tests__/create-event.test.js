@@ -23,11 +23,20 @@ describe('Creating new event', () => {
     expect(response.status).toEqual(200);
   });
 
-  it('creating event without required input should return 400', async () => {
+  it('trying to creat event without required input should return 400', async () => {
     const response = await request(app)
       .post('/events')
       .send(mocks.eventWithErrors);
     event = response.body;
     expect(response.status).toEqual(400);
+  });
+
+  it('if the input does not fulfuill requirements, it should return an array of error messages', async () => {
+    const response = await request(app)
+      .post('/events')
+      .send(mocks.eventWithErrors);
+    event = response.body;
+    // response.body.errors.map(el => el.message);
+    expect(response.body).toEqual(mocks.messageErrors);
   });
 });
