@@ -16,17 +16,18 @@ describe('Creating new event', () => {
   });
 
   it('creating event should return response status 200', async () => {
-    const response = await request(app).post('/events')
+    const response = await request(app)
+      .post('/events')
       .send(mocks.correctEvent);
     event = response.body;
     expect(response.status).toEqual(200);
   });
 
   it('creating event without required input should return 400', async () => {
-    const response = await request(app).post('/events')
+    const response = await request(app)
+      .post('/events')
       .send(mocks.eventWithErrors);
     event = response.body;
     expect(response.status).toEqual(400);
-  })
-
+  });
 });
