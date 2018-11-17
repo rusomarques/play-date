@@ -47,27 +47,22 @@ module.exports = (sequelize, DataTypes) => {
           isNumeric: {
             args: true,
             msg: 'Price should be a number'
-          }
+          },
+          min: 0
         }
       },
       agefrom: {
         type: Sequelize.INTEGER,
         validate: {
           isInt: true,
-          min: {
-            args: 0,
-            msg: 'Please correct age from'
-          }
+          min: 0
         }
       },
       ageto: {
         type: Sequelize.INTEGER,
         validate: {
           isInt: true,
-          min: {
-            args: 0,
-            msg: 'Please correct age to'
-          }
+          min: 0
         }
       }
     },
