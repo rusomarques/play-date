@@ -36,7 +36,14 @@ describe('Creating new event', () => {
       .post('/events')
       .send(mocks.eventWithErrors);
     event = response.body;
-    // response.body.errors.map(el => el.message);
-    expect(response.body).toEqual(mocks.messageErrors);
+    expect(response.body).toEqual(mocks.messageEventWithErrors);
+  });
+
+  it('if required field is not post to create event (value === null), it should return an array with error message', async () => {
+    const response = await request(app)
+      .post('/events')
+      .send(mocks.eventWithNulls);
+    event = response.body;
+    expect(response.body).toEqual(mocks.messageEventWithNulls);
   });
 });
