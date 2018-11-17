@@ -3,7 +3,6 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('events', {
       id: {
-        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
@@ -20,7 +19,7 @@ module.exports = {
         allowNull: false
       },
       eventtime: {
-        type: Sequelize.TIME
+        type: Sequelize.DATE
       },
       location: {
         type: Sequelize.STRING,

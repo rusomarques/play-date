@@ -4,7 +4,6 @@ const data = require('./db.json');
 module.exports = {
   up: queryInterface => {
     const events = data.events.map(event => ({
-      id: event.id,
       title: event.title,
       image: event.image,
       eventdate: event.date,

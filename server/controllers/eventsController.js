@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const eventsController = {};
 const Op = Sequelize.Op;
-// const eventsModel = require('../models/eventsModel');
+// const event = require('../models/event');
 const db = require('../models');
 
 const transformEvent = item => {
@@ -65,25 +65,29 @@ eventsController.getEvent = (req, res) => {
 };
 eventsController.createEvent = (req, res) => {
   const event = req.body;
-  return db.eventsModel
-    .create({
-      image: event.image,
-      title: event.title,
-      eventdate: event.eventdate,
-      eventtime: event.eventtime,
+  const { title, eventdate, location, coords, price } = req.body;
+  if (title && eventdate && location && coords && price) {
+    return db.event
+      .create({
+        image: event.image,
+        title: event.title,
+        eventdate: event.eventdate,
+        eventtime: event.eventtime,
+        location: event.location,
+        lng: event.coords[0],
+        lat: event.coords[1],
+        description: event.description,
+        price: event.price,
+        agefrom: event.agefrom,
+        ageto: event.ageto
+      })
+      .then(item => {
+        return res.send(item).status(200);
+      });
+  }
+  else res.status(400).send('Sorry, missing data to create event');
 
-      location: event.location,
-      lng: event.coords[0],
-      lat: event.coords[1],
-      description: event.description,
-      price: event.price,
-      agefrom: event.agefrom,
-      ageto: event.ageto
-    })
-    .then(item => {
-      res.sendStatus(200);
-      return res.send(item);
-    });
+  
 };
 
 module.exports = eventsController;
