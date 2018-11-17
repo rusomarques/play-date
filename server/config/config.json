@@ -4,20 +4,23 @@
     "password": null,
     "database": "play-date-dev",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": true
   },
   "test": {
     "username": "postgres",
     "password": null,
     "database": "play-date-test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   },
   "production": {
     "username": "postgres",
     "password": null,
     "database": "play-date-production",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "logging": false
   }
 }

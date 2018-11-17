@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../server');
-const singleEventWithErrors = require('./singleEvent');
+const singleEventWithErrors = require('./single-event');
 const db = require('../models/index');
 
 describe('events', () => {
