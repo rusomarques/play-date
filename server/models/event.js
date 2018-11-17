@@ -50,8 +50,26 @@ module.exports = (sequelize, DataTypes) => {
           }
         }
       },
-      agefrom: DataTypes.INTEGER,
-      ageto: DataTypes.INTEGER
+      agefrom: {
+        type: Sequelize.INTEGER,
+        validate: {
+          isInt: true,
+          min: {
+            args: 0,
+            msg: 'Please correct age from'
+          }
+        }
+      },
+      ageto: {
+        type: Sequelize.INTEGER,
+        validate: {
+          isInt: true,
+          min: {
+            args: 0,
+            msg: 'Please correct age to'
+          }
+        }
+      }
     },
     {}
   );
