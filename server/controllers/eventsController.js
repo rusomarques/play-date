@@ -61,28 +61,28 @@ eventsController.getEvent = (req, res) => {
     .catch(() => res.status(404).send('from catch'));
 };
 
-eventsController.createEvent = (req, res) => {
+eventsController.createEvent = async (req, res) => {
   const event = req.body;
-  const { title, eventdate, location, coords, price } = req.body;
-  if (title && eventdate && location && coords && price) {
-    return db.event
-      .create({
-        image: event.image,
-        title: event.title,
-        eventdate: event.eventdate,
-        eventtime: event.eventtime,
-        location: event.location,
-        lng: event.coords[0],
-        lat: event.coords[1],
-        description: event.description,
-        price: event.price,
-        agefrom: event.agefrom,
-        ageto: event.ageto
-      })
-      .then(item => {
-        return res.send(item).status(200);
-      });
-  } else res.status(400).send('Sorry, missing data to create event');
+  const test = db.event.build({
+    image: event.image,
+    title: event.title,
+    eventdate: event.eventdate,
+    eventtime: event.eventtime,
+    location: event.location,
+    lng: event.coords[0],
+    lat: event.coords[1],
+    description: event.description,
+    price: event.price,
+    agefrom: event.agefrom,
+    ageto: event.ageto
+  });
+  try {
+    await test.validate();
+    await test.save();
+    return res.send(test).status(200);
+  } catch (error) {
+    return res.status(400).send(error);
+  }
 };
 
 module.exports = eventsController;
