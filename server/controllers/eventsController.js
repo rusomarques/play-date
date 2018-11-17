@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const eventsController = {};
 const Op = Sequelize.Op;
-// const event = require('../models/event');
 const db = require('../models');
 
 const transformEvent = item => {
@@ -14,9 +13,6 @@ const buildWhereQuery = (query, age, date, free) => {
     where.title = {
       [Op.iLike]: `%${query}%`
     };
-    // where.description = {
-    //   [Op.like]: `%${query}%`
-    // };
   }
 
   if (age) {
@@ -42,11 +38,9 @@ eventsController.getAll = (req, res) => {
   const query = req.query.q;
   const agefrom = req.query.agefrom;
   const date = req.query.eventdate;
-  // const free = req.query.free === 'true' ? true : false;
   const free = req.query.price;
-
   const where = buildWhereQuery(query, agefrom, date, free);
-  // console.log('where', where);
+
   db.event
     .findAll({ where: where }, { order: [['eventdate', 'ASC']] })
     .then(items => {
@@ -57,12 +51,16 @@ eventsController.getAll = (req, res) => {
 };
 
 eventsController.getEvent = (req, res) => {
-  return db.event.findByPk(req.params.id).then(item => {
-    const transformedEvent = transformEvent(item);
-    res.status(200);
-    return res.send(transformedEvent);
-  });
+  db.event
+    .findByPk(req.params.id)
+    .then(item => {
+      const transformedEvent = transformEvent(item);
+      res.status(200);
+      return res.send(transformedEvent);
+    })
+    .catch(() => res.status(404).send('from catch'));
 };
+
 eventsController.createEvent = (req, res) => {
   const event = req.body;
   const { title, eventdate, location, coords, price } = req.body;
@@ -84,10 +82,7 @@ eventsController.createEvent = (req, res) => {
       .then(item => {
         return res.send(item).status(200);
       });
-  }
-  else res.status(400).send('Sorry, missing data to create event');
-
-  
+  } else res.status(400).send('Sorry, missing data to create event');
 };
 
 module.exports = eventsController;
