@@ -2,7 +2,8 @@ import React from 'react';
 import { GoogleLogin } from 'react-google-login';
 import './auth.css';
 import { PostData } from './postdata';
-import { GoogleToken } from '../../../config';
+import { GoogleToken, facebookToken } from '../../../config';
+import FacebookLogin from 'react-facebook-login';
 
 export class AuthComponent extends React.Component {
   constructor(props) {
@@ -17,6 +18,17 @@ export class AuthComponent extends React.Component {
 
   signUp(res, type) {
     let postData;
+
+    if (type === 'facebook' && res.email) {
+      postData = {
+        name: res.name,
+        provider: type,
+        email: res.email,
+        provider_id: res.id,
+        token: res.access_token,
+        provider_pic: res.provider_pic
+      };
+    }
 
     if (type === 'google' && res.w3.U3) {
       postData = {
@@ -44,6 +56,11 @@ export class AuthComponent extends React.Component {
     this.setState({ auth: true, name: response.w3.ig });
   };
 
+  responseFacebook = response => {
+    console.log(response);
+    this.signUp(response, 'facebook');
+  };
+
   render() {
     if (this.state.redirect) {
       return <redirect to={'/'} />;
@@ -61,6 +78,12 @@ export class AuthComponent extends React.Component {
         ) : (
           this.state.name
         )}
+        <FacebookLogin
+          appId={facebookToken}
+          autoLoad={true}
+          fields="name,email,picture"
+          callback={responseFacebook}
+        />
       </div>
     );
   }
