@@ -78,12 +78,16 @@ export class AuthComponent extends React.Component {
         ) : (
           this.state.name
         )}
-        <FacebookLogin
-          appId={facebookToken}
-          autoLoad={true}
-          fields="name,email,picture"
-          callback={responseFacebook}
-        />
+        {!this.state.auth ? (
+          <FacebookLogin
+            appId={facebookToken}
+            autoLoad={true}
+            fields="name,email,picture"
+            callback={this.responseFacebook}
+          />
+        ) : (
+          this.state.name
+        )}
       </div>
     );
   }
