@@ -81,7 +81,8 @@ eventsController.createEvent = async (req, res) => {
     await test.save();
     return res.send(test).status(200);
   } catch (error) {
-    return res.status(400).send(error);
+    const errorMessages = error.errors.map(el => el.message);
+    return res.status(400).send(errorMessages);
   }
 };
 
