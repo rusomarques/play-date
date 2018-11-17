@@ -27,7 +27,7 @@ const buildWhereQuery = (query, age, date, free) => {
 
   if (date) {
     where.eventdate = {
-      [Op.eq]: `${date}`
+      [Op.eq]: date
     };
   }
   if (free) {
@@ -47,7 +47,7 @@ eventsController.getAll = (req, res) => {
 
   const where = buildWhereQuery(query, agefrom, date, free);
   // console.log('where', where);
-  return db.event
+  db.event
     .findAll({ where: where }, { order: [['eventdate', 'ASC']] })
     .then(items => {
       const transformedEvents = items.map(transformEvent);
@@ -57,7 +57,7 @@ eventsController.getAll = (req, res) => {
 };
 
 eventsController.getEvent = (req, res) => {
-  return db.eventsModel.findById(req.params.id).then(item => {
+  return db.event.findByPk(req.params.id).then(item => {
     const transformedEvent = transformEvent(item);
     res.status(200);
     return res.send(transformedEvent);
