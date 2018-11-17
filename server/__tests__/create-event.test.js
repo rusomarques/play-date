@@ -20,6 +20,8 @@ describe('Creating new event', () => {
       .post('/events')
       .send(mocks.correctEvent);
     event = response.body;
+    expect(response.body.title).toEqual(mocks.correctEvent.title);
+    expect(response.body.location).toEqual(mocks.correctEvent.location);
     expect(response.status).toEqual(200);
   });
 
@@ -37,6 +39,7 @@ describe('Creating new event', () => {
       .send(mocks.eventWithErrors);
     event = response.body;
     expect(response.body).toEqual(mocks.messageEventWithErrors);
+    expect(response.status).toEqual(400);
   });
 
   it('if required field is not post to create event (value === null), it should return an array with error message', async () => {
@@ -45,5 +48,6 @@ describe('Creating new event', () => {
       .send(mocks.eventWithNulls);
     event = response.body;
     expect(response.body).toEqual(mocks.messageEventWithNulls);
+    expect(response.status).toEqual(400);
   });
 });
