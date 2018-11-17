@@ -13,8 +13,8 @@ export class component extends React.Component {
       eventdate: PropTypes.string,
       eventtime: PropTypes.string,
       title: PropTypes.string,
-      agefrom: PropTypes.string,
-      ageto: PropTypes.string,
+      agefrom: PropTypes.number,
+      ageto: PropTypes.number,
       price: PropTypes.price
     }),
     getEvents: PropTypes.func,
