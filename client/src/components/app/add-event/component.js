@@ -64,9 +64,19 @@ export class component extends React.Component {
         coords: this.state.coords,
         image: this.state.image
       })
-      .then(() => {
-        this.props.getEvents();
-        this.props.history.push('/');
+      .then(res => {
+        console.log(res);
+        if (res.errors) {
+          this.setState({
+            error: res.errors
+          });
+        } else {
+          this.props.getEvents();
+          this.props.history.push('/');
+        }
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
 
@@ -181,9 +191,14 @@ export class component extends React.Component {
           />
           <button className="button">Add</button>
         </form>
-        {this.state.error && (
-          <p className="error-message">{this.state.error}</p>
-        )}
+        <ul>
+          {this.state.error &&
+            Object.entries(this.state.error).map(([key, value]) => (
+              <li key={value}>
+                {key} {value}
+              </li>
+            ))}
+        </ul>
       </div>
     );
   }
