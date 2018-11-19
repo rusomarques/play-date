@@ -81,13 +81,19 @@ eventsController.createEvent = async (req, res) => {
     await test.save();
     return res.send(test).status(200);
   } catch (error) {
-    let errorMessages;
+    let errorMessages = {
+      errors: {}
+    };
     if (error.errors) {
-      errorMessages = error.errors.map(el => el.message);
+      error.errors.forEach(el => {
+        errorMessages.errors[el.path] = el.message;
+      });
     }
     // NOT NULL VIOLATION code = 23502
     else if (error.parent.code === '23502') {
-      errorMessages = [`Please ${error.parent.column} should be set`];
+      errorMessages.errors[error.parent.column] = `Please ${
+        error.parent.column
+      } should be set`;
     }
     return res.send(errorMessages).status(400);
   }
