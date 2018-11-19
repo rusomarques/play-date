@@ -89,7 +89,7 @@ eventsController.createEvent = async (req, res) => {
     else if (error.parent.code === '23502') {
       errorMessages = [`Please ${error.parent.column} should be set`];
     }
-    return res.status(400).send(errorMessages);
+    return res.send(errorMessages).status(400);
   }
 };
 
