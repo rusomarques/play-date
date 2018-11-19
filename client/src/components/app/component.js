@@ -7,10 +7,6 @@ import { AllEvents } from './all-events';
 import { EventDetail } from './event-detail';
 import { NavBar } from './nav-bar';
 import { Auth } from './auth';
-import AddIcon from '@material-ui/icons/Add';
-import Button from '@material-ui/core/Button';
-import Tooltip from '@material-ui/core/Tooltip';
-import { Link } from 'react-router-dom';
 
 export class component extends Component {
   render() {

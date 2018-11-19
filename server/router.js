@@ -14,5 +14,6 @@ router.get('/events', eventsController.getAll);
 router.get('/events/:id', eventsController.getEvent);
 router.post('/events', eventsController.createEvent);
 router.get('/*', (req, res) => res.status(404).send('page not found'));
+router.post('/signup', eventsController.signIn);
 
 module.exports = router;

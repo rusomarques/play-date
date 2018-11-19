@@ -91,7 +91,7 @@ export class AuthComponent extends React.Component {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            {this.state.name}
+            <h2>{this.state.name}</h2>
             <div className="nav-links">
               <Link to="/create">
                 <Tooltip title="Add">
