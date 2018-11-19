@@ -46,11 +46,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "eslint-plugin-react": "^7.11.1",
     "husky": "^1.1.4",
     "jest-fetch-mock": "^1.7.4",
     "prettier": "^1.15.2",
