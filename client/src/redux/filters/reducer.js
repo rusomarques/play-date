@@ -1,9 +1,4 @@
-const initialState = {
-  age: '',
-  free: false,
-  searchText: '',
-  date: null
-};
+import initialState from './initial-state';
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {

@@ -10,10 +10,10 @@ describe('events', () => {
       const response = await request(app).get('/events');
       expect(response.body).toEqual([]);
     });
-    // it('return nothing if the id is unknown', async () => {
-    //   const response = await request(app).get(`/events/`);
-    //   expect(response.statusCode).toBe(404);
-    // });
+    it('return nothing if the id is unknown', async () => {
+      const response = await request(app).get('/events/9999');
+      expect(response.statusCode).toBe(404);
+    });
   });
 
   describe('valid results', () => {

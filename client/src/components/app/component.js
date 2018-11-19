@@ -6,6 +6,7 @@ import { AddEvent } from './add-event';
 import { AllEvents } from './all-events';
 import { EventDetail } from './event-detail';
 import { NavBar } from './nav-bar';
+import { Auth } from './auth';
 
 export class component extends Component {
   render() {
@@ -13,6 +14,9 @@ export class component extends Component {
       <div className="App">
         <div className="nav-bar">
           <NavBar />
+        </div>
+        <div>
+          <Auth />
         </div>
 
         <div className="container">

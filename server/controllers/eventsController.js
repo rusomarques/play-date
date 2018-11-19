@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const eventsController = {};
 const Op = Sequelize.Op;
-// const event = require('../models/event');
 const db = require('../models');
 
 const transformEvent = item => {
@@ -14,9 +13,6 @@ const buildWhereQuery = (query, age, date, free) => {
     where.title = {
       [Op.iLike]: `%${query}%`
     };
-    // where.description = {
-    //   [Op.like]: `%${query}%`
-    // };
   }
 
   if (age) {
@@ -42,11 +38,9 @@ eventsController.getAll = (req, res) => {
   const query = req.query.q;
   const agefrom = req.query.agefrom;
   const date = req.query.eventdate;
-  // const free = req.query.free === 'true' ? true : false;
   const free = req.query.price;
-
   const where = buildWhereQuery(query, agefrom, date, free);
-  // console.log('where', where);
+
   db.event
     .findAll({ where: where }, { order: [['eventdate', 'ASC']] })
     .then(items => {
@@ -57,37 +51,46 @@ eventsController.getAll = (req, res) => {
 };
 
 eventsController.getEvent = (req, res) => {
-  return db.event.findByPk(req.params.id).then(item => {
-    const transformedEvent = transformEvent(item);
-    res.status(200);
-    return res.send(transformedEvent);
-  });
+  db.event
+    .findByPk(req.params.id)
+    .then(item => {
+      const transformedEvent = transformEvent(item);
+      res.status(200);
+      return res.send(transformedEvent);
+    })
+    .catch(() => res.status(404).send('from catch'));
 };
-eventsController.createEvent = (req, res) => {
-  const event = req.body;
-  const { title, eventdate, location, coords, price } = req.body;
-  if (title && eventdate && location && coords && price) {
-    return db.event
-      .create({
-        image: event.image,
-        title: event.title,
-        eventdate: event.eventdate,
-        eventtime: event.eventtime,
-        location: event.location,
-        lng: event.coords[0],
-        lat: event.coords[1],
-        description: event.description,
-        price: event.price,
-        agefrom: event.agefrom,
-        ageto: event.ageto
-      })
-      .then(item => {
-        return res.send(item).status(200);
-      });
-  }
-  else res.status(400).send('Sorry, missing data to create event');
 
-  
+eventsController.createEvent = async (req, res) => {
+  const event = req.body;
+  const test = db.event.build({
+    image: event.image,
+    title: event.title,
+    eventdate: event.eventdate,
+    eventtime: event.eventtime,
+    location: event.location,
+    lng: event.coords[0],
+    lat: event.coords[1],
+    description: event.description,
+    price: event.price,
+    agefrom: event.agefrom,
+    ageto: event.ageto
+  });
+  try {
+    await test.validate();
+    await test.save();
+    return res.send(test).status(200);
+  } catch (error) {
+    let errorMessages;
+    if (error.errors) {
+      errorMessages = error.errors.map(el => el.message);
+    }
+    // NOT NULL VIOLATION code = 23502
+    else if (error.parent.code === '23502') {
+      errorMessages = [`Please ${error.parent.column} should be set`];
+    }
+    return res.status(400).send(errorMessages);
+  }
 };
 
 module.exports = eventsController;
