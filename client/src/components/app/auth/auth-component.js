@@ -1,10 +1,8 @@
 import React from 'react';
-import { GoogleLogin } from 'react-google-login';
 import GoogleLoginButton from 'react-google-login-button';
 import './auth.css';
 import { PostData } from './postdata';
 import { GoogleToken, facebookToken } from '../../../config';
-import FacebookLogin from 'react-facebook-login';
 import { FacebookLoginButton } from 'react-social-login-buttons';
 
 export class AuthComponent extends React.Component {
@@ -69,28 +67,26 @@ export class AuthComponent extends React.Component {
     }
 
     return (
-      <div class="button">
+      <div className="button">
         {!this.state.auth ? (
-          <GoogleLoginButton
-            googleClientId={GoogleToken}
-            buttonText="LOGIN WITH GOOGLE"
-            onLoginSuccess={this.responseGoogle}
-            onLoginFailure={this.responseGoogle}
-            width={210}
-            height={50}
-            longTitle={true}
-            theme="light"
-          />
-        ) : (
-          this.state.name
-        )}
-        {!this.state.auth ? (
-          <FacebookLoginButton
-            appId={facebookToken}
-            autoLoad={true}
-            fields="name,email,picture"
-            callback={this.responseFacebook}
-          />
+          <React.Fragment>
+            <GoogleLoginButton
+              googleClientId={GoogleToken}
+              buttonText="LOGIN WITH GOOGLE"
+              onLoginSuccess={this.responseGoogle}
+              onLoginFailure={this.responseGoogle}
+              width={210}
+              height={50}
+              longTitle={true}
+              theme="light"
+            />
+            <FacebookLoginButton
+              appId={facebookToken}
+              autoLoad={true}
+              fields="name,email,picture"
+              callback={this.responseFacebook}
+            />
+          </React.Fragment>
         ) : (
           this.state.name
         )}
