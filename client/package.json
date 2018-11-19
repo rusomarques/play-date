@@ -31,7 +31,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"**/*.{js,jsx}\"",
     "format:check": "prettier --list-different \"**/*.{js, jsx, css, json}\""
@@ -55,11 +55,5 @@
     "jest-fetch-mock": "^1.7.4",
     "prettier": "^1.15.2",
     "redux-mock-store": "^1.5.3"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/testSetup.js",
-    "testMatch": [
-      "**/__tests__/**/*test.js"
-    ]
   }
 }
