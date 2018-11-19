@@ -4,6 +4,10 @@ import './auth.css';
 import { PostData } from './postdata';
 import { GoogleToken, facebookToken } from '../../../config';
 import { FacebookLoginButton } from 'react-social-login-buttons';
+import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
+import { Link } from 'react-router-dom';
 
 export class AuthComponent extends React.Component {
   constructor(props) {
@@ -51,13 +55,11 @@ export class AuthComponent extends React.Component {
   }
 
   responseGoogle = response => {
-    console.log(response);
     this.signUp(response, 'google');
     this.setState({ auth: true, name: response.w3.ig });
   };
 
   responseFacebook = response => {
-    console.log(response);
     this.signUp(response, 'facebook');
   };
 
@@ -88,7 +90,18 @@ export class AuthComponent extends React.Component {
             />
           </React.Fragment>
         ) : (
-          this.state.name
+          <React.Fragment>
+            {this.state.name}
+            <div className="nav-links">
+              <Link to="/create">
+                <Tooltip title="Add">
+                  <Button variant="fab" aria-label="Add">
+                    <AddIcon />
+                  </Button>
+                </Tooltip>
+              </Link>
+            </div>
+          </React.Fragment>
         )}
       </div>
     );

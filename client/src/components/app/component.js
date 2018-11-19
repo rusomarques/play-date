@@ -20,16 +20,6 @@ export class component extends Component {
           <NavBar />
 
           <Auth />
-
-          <div className="nav-links">
-            <Link to="/create">
-              <Tooltip title="Add">
-                <Button variant="fab" aria-label="Add">
-                  <AddIcon />
-                </Button>
-              </Tooltip>
-            </Link>
-          </div>
         </div>
 
         <div className="container">
