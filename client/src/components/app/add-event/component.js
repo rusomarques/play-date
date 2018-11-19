@@ -55,8 +55,8 @@ export class component extends React.Component {
       .createEvent({
         title: this.state.title,
         description: this.state.description,
-        eventdate: this.state.eventdate.format('YYYY MM DD'),
-        eventtime: this.state.eventtime,
+        eventdate: this.state.eventdate.format('YYYY-MM-DD hh:mm'),
+        eventtime: this.state.eventtime.format('YYYY-MM-DD hh:mm'),
         agefrom: this.state.agefrom,
         ageto: this.state.ageto,
         price: this.state.price,
