@@ -50,18 +50,19 @@ export class component extends Component {
             <h1>Play Dates</h1>
           </Link>
         </div>
-
-        <div className="nav-area">
-          <div className="nav-links">
-            <Link to="/create">
-              <Tooltip title="Add">
-                <Button variant="fab" aria-label="Add">
-                  <AddIcon />
-                </Button>
-              </Tooltip>
-            </Link>
-          </div>
-        </div>
+        {
+          // <div className="nav-area">
+          //   <div className="nav-links">
+          //     <Link to="/create">
+          //       <Tooltip title="Add">
+          //         <Button variant="fab" aria-label="Add">
+          //           <AddIcon />
+          //         </Button>
+          //       </Tooltip>
+          //     </Link>
+          //   </div>
+          // </div>
+        }
       </div>
     );
   }

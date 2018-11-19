@@ -1,9 +1,11 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login';
+import GoogleLoginButton from 'react-google-login-button';
 import './auth.css';
 import { PostData } from './postdata';
 import { GoogleToken, facebookToken } from '../../../config';
 import FacebookLogin from 'react-facebook-login';
+import { FacebookLoginButton } from 'react-social-login-buttons';
 
 export class AuthComponent extends React.Component {
   constructor(props) {
@@ -67,19 +69,23 @@ export class AuthComponent extends React.Component {
     }
 
     return (
-      <div>
+      <div class="button">
         {!this.state.auth ? (
-          <GoogleLogin
-            clientId={GoogleToken}
-            buttonText="G login with Google"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
+          <GoogleLoginButton
+            googleClientId={GoogleToken}
+            buttonText="LOGIN WITH GOOGLE"
+            onLoginSuccess={this.responseGoogle}
+            onLoginFailure={this.responseGoogle}
+            width={210}
+            height={50}
+            longTitle={true}
+            theme="light"
           />
         ) : (
           this.state.name
         )}
         {!this.state.auth ? (
-          <FacebookLogin
+          <FacebookLoginButton
             appId={facebookToken}
             autoLoad={true}
             fields="name,email,picture"
