@@ -95,7 +95,7 @@ eventsController.createEvent = async (req, res) => {
         error.parent.column
       } should be set`;
     }
-    return res.send(errorMessages).status(400);
+    return res.status(202).send(errorMessages);
   }
 };
 
