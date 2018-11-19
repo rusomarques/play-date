@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
           },
           notEmpty: {
             args: true,
-            msg: 'Pleas title the event'
+            msg: 'Please title the event'
           }
         }
       },
