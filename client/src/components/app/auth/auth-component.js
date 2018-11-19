@@ -33,12 +33,13 @@ export class AuthComponent extends React.Component {
       let responseJson = result;
       if (responseJson.userData) {
         sessionStorage.setItem('userData', JSON.stringify(responseJson));
-        this.setState({ rediect: true });
+        this.setState({ redirect: true });
       }
     });
   }
 
   responseGoogle = response => {
+    console.log(response);
     this.signUp(response, 'google');
     this.setState({ auth: true, name: response.w3.ig });
   };
@@ -53,7 +54,7 @@ export class AuthComponent extends React.Component {
         {!this.state.auth ? (
           <GoogleLogin
             clientId={GoogleToken}
-            buttonText="Google Login"
+            buttonText="G login with Google"
             onSuccess={this.responseGoogle}
             onFailure={this.responseGoogle}
           />
