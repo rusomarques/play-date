@@ -23,8 +23,9 @@ const mocks = {
   messageEventWithErrors: {
     errors: {
       title: 'The title must be between 3 and 40 characters',
-      location: 'Please set the location of the event',
-      price: 'Price should be a number'
+      location: 'Please set the location',
+      time: 'Please set time',
+      price: 'Please set the event fee'
     }
   },
   messageEventWithNulls: {
