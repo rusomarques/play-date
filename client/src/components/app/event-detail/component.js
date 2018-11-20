@@ -5,10 +5,17 @@ import { Map } from '../map';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { FacebookProvider, Like } from 'react-facebook';
+import { withStyles } from '@material-ui/styles';
 
 import './index.css';
 
-export class component extends React.Component {
+const styles = theme => ({
+  cadre: {
+    boxShadow: '8px 8px 6px #888888'
+  }
+});
+
+class componentWithStyle extends React.Component {
   static propTypes = {
     event: PropTypes.object,
     getSingleEvent: PropTypes.func
@@ -20,13 +27,14 @@ export class component extends React.Component {
   }
 
   render() {
+    const { classes } = this.props;
     if (!this.props.event.title) {
       return 'No event...';
     }
     return (
       <div>
         <div className="detail-component">
-          <Card class="cadre">
+          <Card className={classes.cadre}>
             <FacebookProvider appId="352382042235453">
               <Like
                 href="http://codeworks.me"
@@ -162,3 +170,7 @@ export class component extends React.Component {
     );
   }
 }
+
+const component = withStyles(styles)(componentWithStyle);
+
+export { component };
