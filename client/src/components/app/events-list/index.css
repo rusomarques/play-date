@@ -1,12 +1,10 @@
 .events-list {
   display: flex;
   flex-wrap: wrap;
-  /* position: absolute; */
   padding: 10px;
-  /* align-items: center; */
-  justify-content: center;
-  justify-content: flex-start;
-  /* margin-left: 50px; */
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin: 10px;
 }
 
 .fields {

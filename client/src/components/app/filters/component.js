@@ -93,13 +93,6 @@ export class component extends Component {
           min="0"
         />
 
-        {/* <label for="test">Only Free Events</label>
-        <label class="myCheckbox">
-          <input type="checkbox" name="test"  checked={this.props.free}
-            onChange={this.handleChangeFree}/>
-          <span />
-        </label> */}
-        {/* <FormGroup> */}
         <FormControlLabel
           className="toggle"
           control={
@@ -111,7 +104,6 @@ export class component extends Component {
           }
           label="Only Free Events"
         />
-        {/* </FormGroup> */}
       </div>
     );
   }

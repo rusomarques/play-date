@@ -80,7 +80,7 @@ export class AuthComponent extends React.Component {
               buttonText="LOGIN WITH GOOGLE"
               onLoginSuccess={this.responseGoogle}
               onLoginFailure={this.responseGoogle}
-              width={210}
+              width={220}
               height={50}
               longTitle={true}
               theme="light"

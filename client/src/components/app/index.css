@@ -2,7 +2,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: lightcoral;
+  background: linear-gradient(
+    267deg,
+    rgb(121, 52, 247),
+    rgb(117, 91, 249) 50%,
+    rgb(114, 130, 251)
+  );
   color: white;
   font-size: 24px;
   height: 6vh;
