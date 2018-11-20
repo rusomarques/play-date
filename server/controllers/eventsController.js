@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const eventsController = {};
 const Op = Sequelize.Op;
-// const eventsModel = require('../models/eventsModel');
 const db = require('../models');
 
 const transformEvent = item => {
@@ -14,9 +13,6 @@ const buildWhereQuery = (query, age, date, free) => {
     where.title = {
       [Op.iLike]: `%${query}%`
     };
-    // where.description = {
-    //   [Op.like]: `%${query}%`
-    // };
   }
 
   if (age) {
@@ -27,12 +23,10 @@ const buildWhereQuery = (query, age, date, free) => {
 
   if (date) {
     where.eventdate = {
-      [Op.eq]: `${date}`
+      [Op.eq]: date
     };
   }
   if (free) {
-    console.log('hellllo');
-
     where.price = {
       [Op.eq]: '0'
     };
@@ -44,13 +38,10 @@ eventsController.getAll = (req, res) => {
   const query = req.query.q;
   const agefrom = req.query.agefrom;
   const date = req.query.eventdate;
-  // const free = req.query.free === 'true' ? true : false;
   const free = req.query.price;
-  console.log('freee', free);
-
   const where = buildWhereQuery(query, agefrom, date, free);
-  // console.log('where', where);
-  return db.eventsModel
+
+  db.event
     .findAll({ where: where }, { order: [['eventdate', 'ASC']] })
     .then(items => {
       const transformedEvents = items.map(transformEvent);
@@ -60,33 +51,54 @@ eventsController.getAll = (req, res) => {
 };
 
 eventsController.getEvent = (req, res) => {
-  return db.eventsModel.findById(req.params.id).then(item => {
-    const transformedEvent = transformEvent(item);
-    res.status(200);
-    return res.send(transformedEvent);
-  });
-};
-eventsController.createEvent = (req, res) => {
-  const event = req.body;
-  return db.eventsModel
-    .create({
-      image: event.image,
-      title: event.title,
-      eventdate: event.eventdate,
-      eventtime: event.eventtime,
-
-      location: event.location,
-      lng: event.coords[0],
-      lat: event.coords[1],
-      description: event.description,
-      price: event.price,
-      agefrom: event.agefrom,
-      ageto: event.ageto
-    })
+  db.event
+    .findByPk(req.params.id)
     .then(item => {
-      res.sendStatus(200);
-      return res.send(item);
-    });
+      const transformedEvent = transformEvent(item);
+      res.status(200);
+      return res.send(transformedEvent);
+    })
+    .catch(() => res.status(404).send('from catch'));
+};
+
+eventsController.createEvent = async (req, res) => {
+  const event = req.body;
+  const test = db.event.build({
+    image: event.image,
+    title: event.title,
+    eventdate: event.eventdate,
+    eventtime: event.eventtime,
+    location: event.location,
+    lng: event.coords[0],
+    lat: event.coords[1],
+    description: event.description,
+    price: event.price,
+    agefrom: event.agefrom,
+    ageto: event.ageto
+  });
+  try {
+    await test.validate();
+    await test.save();
+    return res.send(test).status(200);
+  } catch (error) {
+    let errorMessages = {
+      errors: {}
+    };
+    if (error.errors) {
+      error.errors.forEach(el => {
+        errorMessages.errors[el.path] = el.message;
+      });
+      if (!event.eventdate) errorMessages.errors.date = 'Please set date';
+      if (!event.eventtime) errorMessages.errors.time = 'Please set time';
+    }
+    // Double check of NOT NULL VIOLATION code = 23502
+    else if (error.parent.code === '23502') {
+      errorMessages.errors[error.parent.column] = `Please ${
+        error.parent.column
+      } should be set`;
+    }
+    return res.status(202).send(errorMessages);
+  }
 };
 
 module.exports = eventsController;

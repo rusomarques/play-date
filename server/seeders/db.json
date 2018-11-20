@@ -1,0 +1,128 @@
+{
+  "events": [
+    {
+      "title": "Ludoteca Placeta del Pi",
+      "image": "http://res.cloudinary.com/rwgr/image/upload/c_scale,h_200/v1541702611/Ludoteca_Placeta_del_Pi_d04vcw.jpg",
+      "description": "Playtime",
+      "date": "2018-11-08",
+      "time": "2018-11-19 11:00",
+      "ageFrom": "0",
+      "ageTo": "5",
+      "price": "0",
+      "location": "Placeta del Pi, 2, 08002 Barcelona, Spain",
+      "coords": [41.3817817, 2.1741835000000265],
+      "id": 1
+    },
+    {
+      "title": "Ludoteca Poble Sec ",
+      "image": "https://res.cloudinary.com/rwgr/image/upload/v1541702901/poblesec_afaie5.jpg",
+      "description": "ludo play time",
+      "date": "2018-11-16",
+      "time": "2018-11-19 11:00",
+      "ageFrom": "1",
+      "ageTo": "5",
+      "price": "0",
+      "location": "Plaça del Sortidor, 12, 08004 Barcelona, Spain",
+      "coords": [41.37206450000001, 2.1625513000000183],
+      "id": 2
+    },
+    {
+      "title": "Ludoteca Guitard",
+      "image": "http://res.cloudinary.com/rwgr/image/upload/c_scale,h_200/v1541703130/gitard_mxjlqz.jpg",
+      "description": "more ludoteca fun",
+      "date": "2018-11-15",
+      "time": "2018-11-19 11:00",
+      "ageFrom": "1",
+      "ageTo": "3",
+      "price": "0",
+      "location": "Carrer de Guitard, 90, 08014 Barcelona, Spain",
+      "coords": [41.3847396, 2.1360890999999356],
+      "id": 3
+    },
+    {
+      "title": "Poble Sec Play",
+      "description": "agdfgdsfgfsdgfdgdsfg",
+      "date": "2018-11-10T13:00:30.672Z",
+      "time": "2018-11-19 12:00",
+      "ageFrom": "3",
+      "ageTo": "4",
+      "price": "6",
+      "location": "08004 Barcelona, Spain",
+      "coords": [41.371526, 2.160474000000022],
+      "image": "http://res.cloudinary.com/cjrrcrosr/image/upload/v1541858230/photos/z3de27i7kjjpkqyratnf.jpg",
+      "id": 4
+    },
+    {
+      "title": "Really Cool Event",
+      "description": "dsaf",
+      "date": "2018-11-10T13:30:41.546Z",
+      "time": "2018-11-19 12:00",
+      "ageFrom": "",
+      "ageTo": "",
+      "price": "",
+      "location": "Avinguda Diagonal, a315, 08013 Barcelona, Spain",
+      "coords": [41.4008307, 2.1758597000000464],
+      "image": "http://res.cloudinary.com/cjrrcrosr/image/upload/v1541859393/photos/vmke8s4xh8jpdvnwvvmr.jpg",
+      "id": 5
+    },
+    {
+      "title": "Lukes Party Time",
+      "description": "Really fun playtime with Luke",
+      "date": "2018-11-10T15:00:12.795Z",
+      "time": "2018-11-19 15:00",
+      "ageFrom": "1",
+      "ageTo": "5",
+      "price": "10",
+      "location": "Plaça Eduard Maristany, 1, 08870 Sitges, Barcelona, Spain",
+      "coords": [41.2390671, 1.8096937000000253],
+      "image": "https://res.cloudinary.com/cjrrcrosr/image/upload/c_scale,h_200,w_300/v1541859967/play.png",
+      "id": 6
+    },
+    {
+      "title": "codeworks",
+      "description": "fun",
+      "date": "2018-11-10T17:00:07.755Z",
+      "time": "2018-11-19 15:00",
+      "ageFrom": "3",
+      "ageTo": "5",
+      "price": "2",
+      "location": "Carrer d'Àvila, 27, 08005 Barcelona, Spain",
+      "coords": [41.3949147, 2.1979555000000346],
+      "image": "http://res.cloudinary.com/cjrrcrosr/image/upload/v1541870819/photos/oqzswsjqn3sguxw5stlg.jpg",
+      "id": 7
+    },
+    {
+      "title": "Marcos event",
+      "description": "fun and games with marco",
+      "date": "2018-11-10T17:30:33.551Z",
+      "time": "2018-11-19 15:00",
+      "ageFrom": "0",
+      "ageTo": "10",
+      "price": "25",
+      "location": "08003 Barcelona, Spain",
+      "coords": [41.38236229999999, 2.185817600000064],
+      "image": "http://res.cloudinary.com/cjrrcrosr/image/upload/v1541871082/photos/bhpshstkfhgeqdv0oimh.jpg",
+      "id": 8
+    },
+    {
+      "title": "Amys event",
+      "description": "asdfsdfs",
+      "date": "2018-11-10T17:00:41.316Z",
+      "time": "2018-11-19 15:00",
+      "ageFrom": "1",
+      "ageTo": "2",
+      "price": "4",
+      "location": "Carrer d'Àvila, 27, 08005 Barcelona, Spain",
+      "coords": [41.3949147, 2.1979555000000346],
+      "image": "http://res.cloudinary.com/cjrrcrosr/image/upload/v1541871211/photos/jtcyyvwt8b8w84j4agpt.jpg",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "email@email.com",
+      "password": "password123"
+    }
+  ]
+}

@@ -1,18 +1,7 @@
-/* .single-event {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  margin: 10px;
-  cursor: pointer;
-  transition: all 500ms;
+.single-event {
+  box-shadow: 8px 8px 6px #888888;
 }
 
 .single-event:hover {
   filter: brightness(85%);
-} */
-/* .single-event {
-  display: flex;
-  min-width: 250px;
-  padding: 10px;
-  margin: 10px;
-} */
+}

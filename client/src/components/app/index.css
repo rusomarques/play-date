@@ -1,11 +1,14 @@
-/* .container {
+.nav-bar {
   display: flex;
   flex-direction: row;
-  text-align: center;
   justify-content: space-around;
-} */
-
-/* .wrapper {
-  width: 90vw;
-  margin: 0 auto;
-} */
+  background: linear-gradient(
+    267deg,
+    rgb(121, 52, 247),
+    rgb(117, 91, 249) 50%,
+    rgb(114, 130, 251)
+  );
+  color: white;
+  font-size: 24px;
+  height: 6vh;
+}

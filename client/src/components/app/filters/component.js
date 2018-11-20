@@ -27,18 +27,13 @@ export class component extends Component {
 
   handleFilterAge = event => {
     const age = event.target.value;
-    console.log('handleFilterAge', age);
     this.props.setAge(age);
   };
 
   handleChangeFree = event => {
     const checked = event.target.checked;
-    console.log('handleChangeFree', checked);
     this.props.setFree(checked);
   };
-  // handleChangeFree = name => event => {
-  //   this.setState({ [name]: event.target.checked });
-  // };
 
   handleSearch = event => {
     const searchText = event.target.value;
@@ -93,17 +88,11 @@ export class component extends Component {
         <input
           value={this.props.age}
           onChange={this.handleFilterAge}
-          type="text"
+          type="number"
           placeholder="Filter by Age"
+          min="0"
         />
 
-        {/* <label for="test">Only Free Events</label>
-        <label class="myCheckbox">
-          <input type="checkbox" name="test"  checked={this.props.free}
-            onChange={this.handleChangeFree}/>
-          <span />
-        </label> */}
-        {/* <FormGroup> */}
         <FormControlLabel
           className="toggle"
           control={
@@ -115,7 +104,6 @@ export class component extends Component {
           }
           label="Only Free Events"
         />
-        {/* </FormGroup> */}
       </div>
     );
   }

@@ -4,10 +4,18 @@ import moment from 'moment';
 import { Map } from '../map';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import { FacebookProvider, Like } from 'react-facebook';
+import { withStyles } from '@material-ui/styles';
 
 import './index.css';
 
-export class component extends React.Component {
+const styles = theme => ({
+  cadre: {
+    boxShadow: '8px 8px 6px #888888'
+  }
+});
+
+class componentWithStyle extends React.Component {
   static propTypes = {
     event: PropTypes.object,
     getSingleEvent: PropTypes.func
@@ -19,13 +27,15 @@ export class component extends React.Component {
   }
 
   render() {
+    const { classes, auth } = this.props;
+
     if (!this.props.event.title) {
       return 'No event...';
     }
     return (
       <div>
         <div className="detail-component">
-          <Card>
+          <Card className={classes.cadre}>
             <CardContent>
               <div className="event-listing">
                 <img
@@ -42,7 +52,7 @@ export class component extends React.Component {
                 <div className="date-time">
                   <h3>
                     <i
-                      class="fas fa-calendar-alt"
+                      className="fas fa-calendar-alt"
                       style={{
                         fontSize: '30px',
                         color: 'grey',
@@ -55,7 +65,7 @@ export class component extends React.Component {
                   </h3>
                   <h3>
                     <i
-                      class="fas fa-clock"
+                      className="fas fa-clock"
                       style={{
                         fontSize: '30px',
                         color: 'grey',
@@ -71,7 +81,7 @@ export class component extends React.Component {
                 </div>
                 <div className="age-price">
                   <i
-                    class="fas fa-child"
+                    className="fas fa-child"
                     style={{
                       fontSize: '30px',
                       color: 'grey',
@@ -85,7 +95,7 @@ export class component extends React.Component {
                 </div>
                 <div className="price">
                   <i
-                    class="fas fa-euro-sign"
+                    className="fas fa-euro-sign"
                     style={{
                       fontSize: '30px',
                       color: 'grey',
@@ -101,9 +111,19 @@ export class component extends React.Component {
 
                 <h3> {this.props.event.description}</h3>
               </div>
+              <div>
+                {auth.includes('facebook') ? (
+                  <Like
+                    href="http://codeworks.me"
+                    colorScheme="dark"
+                    showFaces
+                    share
+                  />
+                ) : null}
+              </div>
             </CardContent>
           </Card>
-          <div className="map">
+          <div className="map-cadre">
             <Card>
               <CardContent className="map-card">
                 <div className="map-detail">
@@ -112,7 +132,7 @@ export class component extends React.Component {
                 <div className="location-details">
                   <div className="address">
                     <i
-                      class="fas fa-map-marker-alt"
+                      className="fas fa-map-marker-alt"
                       style={{
                         fontSize: '40px',
                         color: 'grey',
@@ -121,9 +141,9 @@ export class component extends React.Component {
                     />
                     {this.props.event.location}
                   </div>
-                  <div classname="website">
+                  <div className="website">
                     <i
-                      class="fas fa-at"
+                      className="fas fa-at"
                       style={{
                         fontSize: '40px',
                         color: 'grey',
@@ -135,7 +155,7 @@ export class component extends React.Component {
 
                   <div className="phone">
                     <i
-                      class="fas fa-phone-square"
+                      className="fas fa-phone-square"
                       style={{
                         fontSize: '40px',
                         color: 'grey',
@@ -153,3 +173,7 @@ export class component extends React.Component {
     );
   }
 }
+
+const component = withStyles(styles)(componentWithStyle);
+
+export { component };

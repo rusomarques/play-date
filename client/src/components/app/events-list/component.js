@@ -14,7 +14,7 @@ export class component extends React.Component {
         </div>
         <div className="events-list">
           {this.props.events.map(event => (
-            <EventItem key={event.id} event={event} />
+            <EventItem auth={this.props.auth} key={event.id} event={event} />
           ))}
         </div>
       </div>

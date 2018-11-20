@@ -1,11 +1,16 @@
 .navbar-container {
   display: flex;
-  background-color: lightcoral;
+  background-color: linear-gradient(
+    267deg,
+    rgb(121, 52, 247),
+    rgb(117, 91, 249) 50%,
+    rgb(114, 130, 251)
+  );
   color: white;
   padding: 10px 20px;
   justify-content: space-between;
   align-content: center;
-  /* width: 100%; */
+  min-height: 100px;
 }
 
 .nav-area {
@@ -15,19 +20,19 @@
 .nav-links {
   margin: 10px;
 }
-/* .navbar-button {
+.navbar-button {
   font-size: 1rem;
   padding: 10px;
   border: none;
   margin: 2px;
-} */
+}
 
 .logo-area {
-  align-self: center;
+  align-self: flex-start;
 }
 
 .logo-area h1 {
-  margin: 0px;
+  margin: 5px;
   color: white;
 }
 
