@@ -28,6 +28,7 @@ export class component extends React.Component {
   };
 
   render() {
+    const auth = this.props.auth;
     return (
       <React-Fragment>
         <Card>
@@ -49,9 +50,11 @@ export class component extends React.Component {
                     </h3>
                   </div>
 
-                <div className="time">
-                  <h3>{moment(this.props.event.eventtime).format('h:mm a')}</h3>
-                </div>
+                  <div className="time">
+                    <h3>
+                      {moment(this.props.event.eventtime).format('h:mm a')}
+                    </h3>
+                  </div>
 
                   <div className="location">
                     <h3> {this.props.event.location}</h3>
@@ -78,16 +81,20 @@ export class component extends React.Component {
                 </div>
               </CardContent>
             </div>
-            <div>
-              <FacebookProvider appId="352382042235453">
-                <Like
-                  href="http://codeworks.me"
-                  colorScheme="dark"
-                  showFaces
-                  share
-                />
-              </FacebookProvider>
-            </div>
+            {auth && (
+              <div>
+                <FacebookProvider appId="352382042235453">
+                  <div>
+                    <Like
+                      href="http://codeworks.me"
+                      colorScheme="dark"
+                      showFaces
+                      share
+                    />
+                  </div>
+                </FacebookProvider>
+              </div>
+            )}
           </CardActionArea>
         </Card>
       </React-Fragment>

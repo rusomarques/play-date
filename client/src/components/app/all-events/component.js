@@ -25,7 +25,7 @@ export class component extends Component {
         <div className="filters-bar">
           <Filters />
         </div>
-        <EventsList events={this.props.events} />
+        <EventsList auth={this.props.auth} events={this.props.events} />
       </div>
     );
   }
