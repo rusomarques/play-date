@@ -20,6 +20,7 @@ export class component extends React.Component {
   }
 
   render() {
+    const auth = this.props.auth;
     if (!this.props.event.title) {
       return 'No event...';
     }
@@ -28,16 +29,6 @@ export class component extends React.Component {
         <div className="detail-component">
           <Card>
             <CardContent>
-              <FacebookProvider appId="352382042235453">
-                <div>
-                  <Like
-                    href="http://codeworks.me"
-                    colorScheme="dark"
-                    showFaces
-                    share
-                  />
-                </div>
-              </FacebookProvider>
               <div className="event-listing">
                 <img
                   src={this.props.event.image}
@@ -111,6 +102,16 @@ export class component extends React.Component {
                 </div>
 
                 <h3> {this.props.event.description}</h3>
+              </div>
+              <div>
+                {auth ? (
+                  <Like
+                    href="http://codeworks.me"
+                    colorScheme="dark"
+                    showFaces
+                    share
+                  />
+                ) : null}
               </div>
             </CardContent>
           </Card>

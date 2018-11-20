@@ -1,9 +1,9 @@
 import React from 'react';
 import GoogleLoginButton from 'react-google-login-button';
-import FacebookLogin from 'react-facebook-login';
+import { LoginButton } from 'react-facebook';
 import './auth.css';
 import { PostData } from './postdata';
-import { GoogleToken, facebookToken } from '../../../config';
+import { GoogleToken } from '../../../config';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -25,12 +25,12 @@ export class AuthComponent extends React.Component {
 
     if (type === 'facebook' && res.email) {
       postData = {
-        name: res.name,
+        name: res.profile.name,
         provider: type,
-        email: res.email,
-        provider_id: res.id,
-        token: res.accessToken,
-        provider_pic: res.picture.data.url
+        email: res.profile.email,
+        provider_id: res.profile.id,
+        token: res.tokenDetail.accessToken,
+        provider_pic: res.profile.picture.data.url
       };
     }
 
@@ -45,8 +45,6 @@ export class AuthComponent extends React.Component {
       };
     }
 
-    this.props.onClick(true);
-
     PostData('signup', postData).then(result => {
       let responseJson = result;
       if (responseJson.userData) {
@@ -59,11 +57,13 @@ export class AuthComponent extends React.Component {
   responseGoogle = response => {
     this.signUp(response, 'google');
     this.setState({ auth: true, name: response.w3.ig });
+    this.props.onClick(true);
   };
 
   responseFacebook = response => {
     this.signUp(response, 'facebook');
-    this.setState({ auth: true, name: response.name });
+    this.setState({ auth: true, name: response.profile.name });
+    this.props.onClick(true);
   };
 
   render() {
@@ -86,14 +86,13 @@ export class AuthComponent extends React.Component {
               theme="light"
             />
 
-            <FacebookLogin
-              appId={facebookToken}
-              autoLoad={true}
-              fields="name,email,picture"
-              callback={this.responseFacebook}
-              cssClass="my-facebook-button-class"
-              icon="fa-facebook"
-            />
+            <LoginButton
+              scope="email"
+              onCompleted={this.responseFacebook}
+              onError={this.responseFacebook}
+            >
+              <span>Login via Facebook</span>
+            </LoginButton>
           </React.Fragment>
         ) : (
           <React.Fragment>
