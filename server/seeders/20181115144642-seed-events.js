@@ -7,6 +7,7 @@ module.exports = {
       title: event.title,
       image: event.image,
       eventdate: event.date,
+      eventtime: event.time,
       location: event.location,
       lng: event.coords[0],
       lat: event.coords[1],

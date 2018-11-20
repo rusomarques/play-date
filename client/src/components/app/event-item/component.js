@@ -49,16 +49,9 @@ export class component extends React.Component {
                     </h3>
                   </div>
 
-                  <div className="time">
-                    <h3>
-                      {moment(
-                        this.props.event.eventdate +
-                          ' ' +
-                          this.props.event.eventtime +
-                          'Z'
-                      ).format('h:mm a')}
-                    </h3>
-                  </div>
+                <div className="time">
+                  <h3>{moment(this.props.event.eventtime).format('h:mm a')}</h3>
+                </div>
 
                   <div className="location">
                     <h3> {this.props.event.location}</h3>
