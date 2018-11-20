@@ -36,14 +36,6 @@ class componentWithStyle extends React.Component {
       <div>
         <div className="detail-component">
           <Card className={classes.cadre}>
-            <FacebookProvider appId="352382042235453">
-              <Like
-                href="http://codeworks.me"
-                colorScheme="dark"
-                showFaces
-                share
-              />
-            </FacebookProvider>
             <CardContent>
               <div className="event-listing">
                 <img
