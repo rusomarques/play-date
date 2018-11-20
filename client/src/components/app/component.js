@@ -13,12 +13,12 @@ import { facebookToken } from '../../config';
 
 export class component extends Component {
   state = {
-    auth: false
+    auth: []
   };
 
-  handleAuth(boolean) {
+  handleAuth(string) {
     this.setState({
-      auth: boolean
+      auth: [...this.state.auth, string]
     });
   }
 
@@ -30,14 +30,16 @@ export class component extends Component {
           <div className="nav-bar">
             <NavBar />
 
-            <Auth onClick={boolean => this.handleAuth(boolean)} />
+            <Auth onClick={string => this.handleAuth(string)} />
           </div>
 
           <div className="container">
             <Switch>
               <Route
                 path="/create"
-                render={() => (auth ? <AddEvent /> : <Redirect to="/" />)}
+                render={() =>
+                  auth.length ? <AddEvent /> : <Redirect to="/" />
+                }
               />
               <Route path="/:id" render={() => <EventDetail auth={auth} />} />
               <Route path="/" render={() => <AllEvents auth={auth} />} />

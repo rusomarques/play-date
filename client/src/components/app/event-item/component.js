@@ -82,7 +82,7 @@ export class componentWithStyle extends React.Component {
                     )}
                   </div>
                 </div>
-                {auth ? (
+                {auth.includes('facebook') ? (
                   <Like
                     href="http://codeworks.me"
                     colorScheme="dark"
