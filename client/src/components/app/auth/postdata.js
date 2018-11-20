@@ -1,19 +1,14 @@
 export function PostData(type, userData) {
-  let BaseURL = 'http://localhost:3000/';
+  console.log(userData);
+  let BaseURL = 'http://localhost:3002/';
 
-  return new Promise((resolve, reject) => {
-    fetch(BaseURL + type, {
-      method: 'POST',
-      body: JSON.stringify(userData)
-    })
-      .then(response => {
-        return response;
-      })
-      .then(res => {
-        resolve(res);
-      })
-      .catch(error => {
-        reject(error);
-      });
+  return fetch(BaseURL + type, {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify(userData)
+  }).then(res => {
+    return res;
   });
 }
