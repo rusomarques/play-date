@@ -19,7 +19,8 @@ module.exports = {
         allowNull: false
       },
       eventtime: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       location: {
         type: Sequelize.STRING,

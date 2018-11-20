@@ -6,9 +6,9 @@ describe('reducers', () => {
     const result = reducer(undefined, {});
 
     expect(result.age).toEqual('');
-    expect(result.free).toBeFalsy;
+    expect(result.free).toBe(false);
     expect(result.searchText).toEqual('');
-    expect(result.date).toBeNull;
+    expect(result.date).toBe(null);
   });
 
   it('should reduce the age action', () => {

@@ -55,18 +55,32 @@ export class component extends React.Component {
       .createEvent({
         title: this.state.title,
         description: this.state.description,
-        eventdate: this.state.eventdate.format('YYYY MM DD'),
-        eventtime: this.state.eventtime,
-        agefrom: this.state.agefrom,
-        ageto: this.state.ageto,
+        eventdate:
+          this.state.eventdate &&
+          this.state.eventdate.format('YYYY-MM-DD hh:mm'),
+        eventtime:
+          this.state.eventtime &&
+          this.state.eventtime.format('YYYY-MM-DD hh:mm'),
+        agefrom: this.state.agefrom || 0,
+        ageto: this.state.ageto || 15,
         price: this.state.price,
         location: this.state.location,
         coords: this.state.coords,
         image: this.state.image
       })
-      .then(() => {
-        this.props.getEvents();
-        this.props.history.push('/');
+      .then(res => {
+        console.log(res);
+        if (res.errors) {
+          this.setState({
+            error: res.errors
+          });
+        } else {
+          this.props.getEvents();
+          this.props.history.push('/');
+        }
+      })
+      .catch(error => {
+        console.log(error);
       });
   };
 
@@ -181,9 +195,14 @@ export class component extends React.Component {
           />
           <button className="button">Add</button>
         </form>
-        {this.state.error && (
-          <p className="error-message">{this.state.error}</p>
-        )}
+        <div id="error-messages">
+          <ul>
+            {this.state.error &&
+              Object.entries(this.state.error).map(([key, value]) => (
+                <li key={value}>{value}</li>
+              ))}
+          </ul>
+        </div>
       </div>
     );
   }
