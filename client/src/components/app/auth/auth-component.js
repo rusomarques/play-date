@@ -45,6 +45,8 @@ export class AuthComponent extends React.Component {
       };
     }
 
+    this.props.onClick(true);
+
     PostData('signup', postData).then(result => {
       let responseJson = result;
       if (responseJson.userData) {

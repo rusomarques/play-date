@@ -26,5 +26,3 @@ module.exports = {
     return queryInterface.bulkDelete('events', null, {});
   }
 };
-
-// console.log(data);
