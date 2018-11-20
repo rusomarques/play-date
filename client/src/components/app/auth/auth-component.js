@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleLoginButton from 'react-google-login-button';
+import FacebookLogin from 'react-facebook-login';
 import './auth.css';
 import { PostData } from './postdata';
 import { GoogleToken, facebookToken } from '../../../config';
@@ -7,7 +8,6 @@ import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import { Link } from 'react-router-dom';
-import FacebookLogin from 'react-facebook-login';
 
 export class AuthComponent extends React.Component {
   constructor(props) {

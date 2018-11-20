@@ -16,6 +16,7 @@ export class component extends React.Component {
       title: PropTypes.string,
       agefrom: PropTypes.number,
       ageto: PropTypes.number,
+
       price: PropTypes.price
     }),
     getEvents: PropTypes.func,
@@ -84,18 +85,17 @@ export class component extends React.Component {
                 </div>
               </CardContent>
             </div>
-          </CardActionArea>
-
-          <FacebookProvider appId="352382042235453">
             <div>
-              <Like
-                href="http://codeworks.me"
-                colorScheme="dark"
-                showFaces
-                share
-              />
+              <FacebookProvider appId="352382042235453">
+                <Like
+                  href="http://codeworks.me"
+                  colorScheme="dark"
+                  showFaces
+                  share
+                />
+              </FacebookProvider>
             </div>
-          </FacebookProvider>
+          </CardActionArea>
         </Card>
       </React-Fragment>
     );
