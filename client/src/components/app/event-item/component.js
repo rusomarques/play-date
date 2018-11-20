@@ -4,6 +4,7 @@ import moment from 'moment';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
+import { FacebookProvider, Like } from 'react-facebook';
 
 import './index.css';
 
@@ -15,6 +16,7 @@ export class component extends React.Component {
       title: PropTypes.string,
       agefrom: PropTypes.number,
       ageto: PropTypes.number,
+
       price: PropTypes.price
     }),
     getEvents: PropTypes.func,
@@ -27,60 +29,68 @@ export class component extends React.Component {
 
   render() {
     return (
-      <Card>
-        <CardActionArea>
-          <div className="single-event" onClick={this.handleClick}>
-            <CardContent>
-              <img src={this.props.event.image} alt="event" />
+      <React-Fragment>
+        <Card>
+          <CardActionArea>
+            <div className="single-event" onClick={this.handleClick}>
+              <CardContent>
+                <img src={this.props.event.image} alt="event" />
 
-              <div className="fields">
-                <div className="title">
-                  <h2>{this.props.event.title}</h2>
-                </div>
+                <div className="fields">
+                  <div className="title">
+                    <h2>{this.props.event.title}</h2>
+                  </div>
 
-                <div className="date">
-                  <h3>
-                    {moment(new Date(this.props.event.eventdate)).format(
-                      'dddd, MMMM Do YYYY'
-                    )}
-                  </h3>
-                </div>
+                  <div className="date">
+                    <h3>
+                      {moment(new Date(this.props.event.eventdate)).format(
+                        'dddd, MMMM Do YYYY'
+                      )}
+                    </h3>
+                  </div>
 
                 <div className="time">
                   <h3>{moment(this.props.event.eventtime).format('h:mm a')}</h3>
                 </div>
 
-                <div className="location">
-                  <h3> {this.props.event.location}</h3>
-                </div>
+                  <div className="location">
+                    <h3> {this.props.event.location}</h3>
+                  </div>
 
-                <div className="agefrom">
-                  <h3>
-                    Age From: {this.props.event.agefrom} -{' '}
-                    {this.props.event.ageto}
-                  </h3>
-                </div>
+                  <div className="agefrom">
+                    <h3>
+                      Age From: {this.props.event.agefrom} -{' '}
+                      {this.props.event.ageto}
+                    </h3>
+                  </div>
 
-                {/* <div className="ageto">
+                  {/* <div className="ageto">
                   <h3>Age To: {this.props.event.ageto}</h3>
                 </div> */}
 
-                <div className="price">
-                  {this.props.event.price === '0' ? (
-                    <h3>Price: Free</h3>
-                  ) : (
-                    <h3>Price: {this.props.event.price}</h3>
-                  )}
+                  <div className="price">
+                    {this.props.event.price === '0' ? (
+                      <h3>Price: Free</h3>
+                    ) : (
+                      <h3>Price: {this.props.event.price}</h3>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </div>
-        </CardActionArea>
-      </Card>
-
-      //   <div className="delete">
-      //   <button onClick={() => this.deleteEvent()}>Delete</button>
-      // </div>
+              </CardContent>
+            </div>
+            <div>
+              <FacebookProvider appId="352382042235453">
+                <Like
+                  href="http://codeworks.me"
+                  colorScheme="dark"
+                  showFaces
+                  share
+                />
+              </FacebookProvider>
+            </div>
+          </CardActionArea>
+        </Card>
+      </React-Fragment>
     );
   }
 }

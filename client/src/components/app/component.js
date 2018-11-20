@@ -14,8 +14,7 @@ export class component extends Component {
       <div className="App">
         <div className="nav-bar">
           <NavBar />
-        </div>
-        <div>
+
           <Auth />
         </div>
 

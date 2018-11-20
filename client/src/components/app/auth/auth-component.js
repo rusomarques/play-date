@@ -1,9 +1,13 @@
 import React from 'react';
-import { GoogleLogin } from 'react-google-login';
+import GoogleLoginButton from 'react-google-login-button';
+import FacebookLogin from 'react-facebook-login';
 import './auth.css';
 import { PostData } from './postdata';
 import { GoogleToken, facebookToken } from '../../../config';
-import FacebookLogin from 'react-facebook-login';
+import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
+import { Link } from 'react-router-dom';
 
 export class AuthComponent extends React.Component {
   constructor(props) {
@@ -25,8 +29,8 @@ export class AuthComponent extends React.Component {
         provider: type,
         email: res.email,
         provider_id: res.id,
-        token: res.access_token,
-        provider_pic: res.provider_pic
+        token: res.accessToken,
+        provider_pic: res.picture.data.url
       };
     }
 
@@ -51,14 +55,13 @@ export class AuthComponent extends React.Component {
   }
 
   responseGoogle = response => {
-    console.log(response);
     this.signUp(response, 'google');
     this.setState({ auth: true, name: response.w3.ig });
   };
 
   responseFacebook = response => {
-    console.log(response);
     this.signUp(response, 'facebook');
+    this.setState({ auth: true, name: response.name });
   };
 
   render() {
@@ -67,26 +70,42 @@ export class AuthComponent extends React.Component {
     }
 
     return (
-      <div>
+      <div className="button">
         {!this.state.auth ? (
-          <GoogleLogin
-            clientId={GoogleToken}
-            buttonText="G login with Google"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-          />
+          <React.Fragment>
+            <GoogleLoginButton
+              googleClientId={GoogleToken}
+              buttonText="LOGIN WITH GOOGLE"
+              onLoginSuccess={this.responseGoogle}
+              onLoginFailure={this.responseGoogle}
+              width={210}
+              height={50}
+              longTitle={true}
+              theme="light"
+            />
+
+            <FacebookLogin
+              appId={facebookToken}
+              autoLoad={true}
+              fields="name,email,picture"
+              callback={this.responseFacebook}
+              cssClass="my-facebook-button-class"
+              icon="fa-facebook"
+            />
+          </React.Fragment>
         ) : (
-          this.state.name
-        )}
-        {!this.state.auth ? (
-          <FacebookLogin
-            appId={facebookToken}
-            autoLoad={true}
-            fields="name,email,picture"
-            callback={this.responseFacebook}
-          />
-        ) : (
-          this.state.name
+          <React.Fragment>
+            <h2>{this.state.name}</h2>
+            <div className="nav-links">
+              <Link to="/create">
+                <Tooltip title="Add">
+                  <Button variant="fab" aria-label="Add">
+                    <AddIcon />
+                  </Button>
+                </Tooltip>
+              </Link>
+            </div>
+          </React.Fragment>
         )}
       </div>
     );
