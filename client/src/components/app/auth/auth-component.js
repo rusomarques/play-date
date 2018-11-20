@@ -25,8 +25,8 @@ export class AuthComponent extends React.Component {
         provider: type,
         email: res.email,
         provider_id: res.id,
-        token: res.accessToken,
-        provider_pic: res.picture.data.url
+        token: res.access_token,
+        provider_pic: res.provider_pic
       };
     }
 
@@ -42,8 +42,10 @@ export class AuthComponent extends React.Component {
     }
 
     PostData('signup', postData).then(result => {
-      if (result.status === 200) {
-        console.log('user authenticated');
+      let responseJson = result;
+      if (responseJson.userData) {
+        sessionStorage.setItem('userData', JSON.stringify(responseJson));
+        this.setState({ redirect: true });
       }
     });
   }
