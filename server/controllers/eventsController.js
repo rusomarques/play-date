@@ -93,10 +93,4 @@ eventsController.createEvent = async (req, res) => {
   }
 };
 
-eventsController.signIn = async (req, res, next) => {
-  console.log(req.body);
-  if (req.params.name === undefined) next();
-  else db.storeUser(res.body);
-};
-
 module.exports = eventsController;
