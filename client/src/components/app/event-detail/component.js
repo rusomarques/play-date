@@ -112,7 +112,7 @@ class componentWithStyle extends React.Component {
                 <h3> {this.props.event.description}</h3>
               </div>
               <div>
-                {auth ? (
+                {auth.includes('facebook') ? (
                   <Like
                     href="http://codeworks.me"
                     colorScheme="dark"

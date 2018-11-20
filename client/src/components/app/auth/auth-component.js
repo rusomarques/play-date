@@ -57,13 +57,13 @@ export class AuthComponent extends React.Component {
   responseGoogle = response => {
     this.signUp(response, 'google');
     this.setState({ auth: true, name: response.w3.ig });
-    this.props.onClick(true);
+    this.props.onClick('google');
   };
 
   responseFacebook = response => {
     this.signUp(response, 'facebook');
     this.setState({ auth: true, name: response.profile.name });
-    this.props.onClick(true);
+    this.props.onClick('facebook');
   };
 
   render() {
