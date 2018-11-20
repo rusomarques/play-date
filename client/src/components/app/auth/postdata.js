@@ -1,4 +1,5 @@
 export function PostData(type, userData) {
+  console.log(userData);
   let BaseURL = 'http://localhost:3002/';
 
   return fetch(BaseURL + type, {

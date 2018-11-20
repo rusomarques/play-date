@@ -4,6 +4,7 @@ import moment from 'moment';
 import { Map } from '../map';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import { FacebookProvider, Like } from 'react-facebook';
 
 import './index.css';
 
@@ -27,6 +28,16 @@ export class component extends React.Component {
         <div className="detail-component">
           <Card>
             <CardContent>
+              <FacebookProvider appId="352382042235453">
+                <div>
+                  <Like
+                    href="http://codeworks.me"
+                    colorScheme="dark"
+                    showFaces
+                    share
+                  />
+                </div>
+              </FacebookProvider>
               <div className="event-listing">
                 <img
                   src={this.props.event.image}

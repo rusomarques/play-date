@@ -3,11 +3,11 @@ import GoogleLoginButton from 'react-google-login-button';
 import './auth.css';
 import { PostData } from './postdata';
 import { GoogleToken, facebookToken } from '../../../config';
-import { FacebookLoginButton } from 'react-social-login-buttons';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import { Link } from 'react-router-dom';
+import FacebookLogin from 'react-facebook-login';
 
 export class AuthComponent extends React.Component {
   constructor(props) {
@@ -29,8 +29,8 @@ export class AuthComponent extends React.Component {
         provider: type,
         email: res.email,
         provider_id: res.id,
-        token: res.access_token,
-        provider_pic: res.provider_pic
+        token: res.accessToken,
+        provider_pic: res.picture.data.url
       };
     }
 
@@ -61,6 +61,7 @@ export class AuthComponent extends React.Component {
 
   responseFacebook = response => {
     this.signUp(response, 'facebook');
+    this.setState({ auth: true, name: response.name });
   };
 
   render() {
@@ -82,11 +83,14 @@ export class AuthComponent extends React.Component {
               longTitle={true}
               theme="light"
             />
-            <FacebookLoginButton
+
+            <FacebookLogin
               appId={facebookToken}
               autoLoad={true}
               fields="name,email,picture"
               callback={this.responseFacebook}
+              cssClass="my-facebook-button-class"
+              icon="fa-facebook"
             />
           </React.Fragment>
         ) : (

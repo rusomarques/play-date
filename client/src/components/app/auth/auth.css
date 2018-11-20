@@ -3,3 +3,12 @@
   flex-direction: row;
   align-items: center;
 }
+
+.my-facebook-button-class {
+  background: #4267b2;
+  border-radius: 5px;
+  color: white;
+  height: 54px;
+  text-align: center;
+  width: 220px;
+}

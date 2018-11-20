@@ -4,6 +4,7 @@ import moment from 'moment';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
+import { FacebookProvider, Like } from 'react-facebook';
 
 import './index.css';
 
@@ -27,67 +28,76 @@ export class component extends React.Component {
 
   render() {
     return (
-      <Card>
-        <CardActionArea>
-          <div className="single-event" onClick={this.handleClick}>
-            <CardContent>
-              <img src={this.props.event.image} alt="event" />
+      <React-Fragment>
+        <Card>
+          <CardActionArea>
+            <div className="single-event" onClick={this.handleClick}>
+              <CardContent>
+                <img src={this.props.event.image} alt="event" />
 
-              <div className="fields">
-                <div className="title">
-                  <h2>{this.props.event.title}</h2>
-                </div>
+                <div className="fields">
+                  <div className="title">
+                    <h2>{this.props.event.title}</h2>
+                  </div>
 
-                <div className="date">
-                  <h3>
-                    {moment(new Date(this.props.event.eventdate)).format(
-                      'dddd, MMMM Do YYYY'
-                    )}
-                  </h3>
-                </div>
+                  <div className="date">
+                    <h3>
+                      {moment(new Date(this.props.event.eventdate)).format(
+                        'dddd, MMMM Do YYYY'
+                      )}
+                    </h3>
+                  </div>
 
-                <div className="time">
-                  <h3>
-                    {moment(
-                      this.props.event.eventdate +
-                        ' ' +
-                        this.props.event.eventtime +
-                        'Z'
-                    ).format('h:mm a')}
-                  </h3>
-                </div>
+                  <div className="time">
+                    <h3>
+                      {moment(
+                        this.props.event.eventdate +
+                          ' ' +
+                          this.props.event.eventtime +
+                          'Z'
+                      ).format('h:mm a')}
+                    </h3>
+                  </div>
 
-                <div className="location">
-                  <h3> {this.props.event.location}</h3>
-                </div>
+                  <div className="location">
+                    <h3> {this.props.event.location}</h3>
+                  </div>
 
-                <div className="agefrom">
-                  <h3>
-                    Age From: {this.props.event.agefrom} -{' '}
-                    {this.props.event.ageto}
-                  </h3>
-                </div>
+                  <div className="agefrom">
+                    <h3>
+                      Age From: {this.props.event.agefrom} -{' '}
+                      {this.props.event.ageto}
+                    </h3>
+                  </div>
 
-                {/* <div className="ageto">
+                  {/* <div className="ageto">
                   <h3>Age To: {this.props.event.ageto}</h3>
                 </div> */}
 
-                <div className="price">
-                  {this.props.event.price === '0' ? (
-                    <h3>Price: Free</h3>
-                  ) : (
-                    <h3>Price: {this.props.event.price}</h3>
-                  )}
+                  <div className="price">
+                    {this.props.event.price === '0' ? (
+                      <h3>Price: Free</h3>
+                    ) : (
+                      <h3>Price: {this.props.event.price}</h3>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </div>
-        </CardActionArea>
-      </Card>
+              </CardContent>
+            </div>
+          </CardActionArea>
 
-      //   <div className="delete">
-      //   <button onClick={() => this.deleteEvent()}>Delete</button>
-      // </div>
+          <FacebookProvider appId="352382042235453">
+            <div>
+              <Like
+                href="http://codeworks.me"
+                colorScheme="dark"
+                showFaces
+                share
+              />
+            </div>
+          </FacebookProvider>
+        </Card>
+      </React-Fragment>
     );
   }
 }
