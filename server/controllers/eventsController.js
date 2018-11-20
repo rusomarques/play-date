@@ -88,8 +88,10 @@ eventsController.createEvent = async (req, res) => {
       error.errors.forEach(el => {
         errorMessages.errors[el.path] = el.message;
       });
+      if (!event.eventdate) errorMessages.errors.date = 'Please set date';
+      if (!event.eventtime) errorMessages.errors.time = 'Please set time';
     }
-    // NOT NULL VIOLATION code = 23502
+    // Double check of NOT NULL VIOLATION code = 23502
     else if (error.parent.code === '23502') {
       errorMessages.errors[error.parent.column] = `Please ${
         error.parent.column

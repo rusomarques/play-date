@@ -28,13 +28,21 @@ module.exports = (sequelize, DataTypes) => {
           }
         }
       },
-      eventtime: DataTypes.DATE,
+      eventtime: {
+        type: Sequelize.DATE,
+        validate: {
+          notEmpty: {
+            args: true,
+            msg: 'Please set the time of the event'
+          }
+        }
+      },
       location: {
         type: Sequelize.STRING,
         validate: {
           notEmpty: {
             args: true,
-            msg: 'Please set the location of the event'
+            msg: 'Please set the location'
           }
         }
       },
@@ -46,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           isNumeric: {
             args: true,
-            msg: 'Price should be a number'
+            msg: 'Please set the event fee'
           },
           min: 0
         }
