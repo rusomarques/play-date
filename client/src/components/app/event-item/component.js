@@ -4,8 +4,8 @@ import moment from 'moment';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import { FacebookProvider, Like } from 'react-facebook';
 import { withStyles } from '@material-ui/styles';
+import { Like } from 'react-facebook';
 
 import './index.css';
 
@@ -24,7 +24,6 @@ export class componentWithStyle extends React.Component {
       title: PropTypes.string,
       agefrom: PropTypes.number,
       ageto: PropTypes.number,
-
       price: PropTypes.price
     }),
     getEvents: PropTypes.func,
@@ -75,11 +74,6 @@ export class componentWithStyle extends React.Component {
                       {this.props.event.ageto}
                     </h3>
                   </div>
-
-                  {/* <div className="ageto">
-                  <h3>Age To: {this.props.event.ageto}</h3>
-                </div> */}
-
                   <div className="price">
                     {this.props.event.price === '0' ? (
                       <h3>Price: Free</h3>
@@ -88,22 +82,16 @@ export class componentWithStyle extends React.Component {
                     )}
                   </div>
                 </div>
+                {auth ? (
+                  <Like
+                    href="http://codeworks.me"
+                    colorScheme="dark"
+                    showFaces
+                    share
+                  />
+                ) : null}
               </CardContent>
             </div>
-            {auth && (
-              <div>
-                <FacebookProvider appId="352382042235453">
-                  <div>
-                    <Like
-                      href="http://codeworks.me"
-                      colorScheme="dark"
-                      showFaces
-                      share
-                    />
-                  </div>
-                </FacebookProvider>
-              </div>
-            )}
           </CardActionArea>
         </Card>
       </React-Fragment>

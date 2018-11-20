@@ -27,7 +27,8 @@ class componentWithStyle extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, auth } = this.props;
+
     if (!this.props.event.title) {
       return 'No event...';
     }
@@ -117,6 +118,16 @@ class componentWithStyle extends React.Component {
                 </div>
 
                 <h3> {this.props.event.description}</h3>
+              </div>
+              <div>
+                {auth ? (
+                  <Like
+                    href="http://codeworks.me"
+                    colorScheme="dark"
+                    showFaces
+                    share
+                  />
+                ) : null}
               </div>
             </CardContent>
           </Card>
