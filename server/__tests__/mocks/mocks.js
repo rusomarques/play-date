@@ -20,12 +20,18 @@ const mocks = {
     coords: [41.3858788, 2.170833000000016],
     price: 4
   },
-  messageEventWithErrors: [
-    'The title must be between 3 and 40 characters',
-    'Please set the location of the event',
-    'Price should be a number'
-  ],
-  messageEventWithNulls: ['Please title should be set']
+  messageEventWithErrors: {
+    errors: {
+      title: 'The title must be between 3 and 40 characters',
+      location: 'Please set the location of the event',
+      price: 'Price should be a number'
+    }
+  },
+  messageEventWithNulls: {
+    errors: {
+      title: 'Please title should be set'
+    }
+  }
 };
 
 module.exports = mocks;
