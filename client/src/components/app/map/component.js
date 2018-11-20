@@ -19,16 +19,6 @@ export class component extends React.Component {
     this.setState({ activeId: null });
   };
 
-  // componentDidMount() {
-  //   setTimeout(() => {
-  //     this.flag = false;
-  //   }, 1000);
-  // }
-
-  // shouldComponentUpdate(prevProps, prevState) {
-  //   return this.flag;
-  // }
-
   render() {
     const { events } = this.props;
 
@@ -39,10 +29,18 @@ export class component extends React.Component {
       const barcelonaCoords = { lat: 41.3851, lng: 2.1734 };
       const defaultCenter =
         events.length === 1
-          ? { lat: events[0].coords[0], lng: events[0].coords[1] }
+          ? {
+              lat: events[0].coords[0],
+              lng: events[0].coords[1]
+            }
           : barcelonaCoords;
+
       return (
-        <GoogleMap defaultZoom={13} defaultCenter={defaultCenter}>
+        <GoogleMap
+          defaultZoom={13}
+          defaultCenter={defaultCenter}
+          mapTypeId={'hybrid'}
+        >
           {events.map(el => {
             return (
               <Marker

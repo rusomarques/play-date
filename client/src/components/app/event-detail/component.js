@@ -26,18 +26,16 @@ export class component extends React.Component {
     return (
       <div>
         <div className="detail-component">
-          <Card>
+          <Card class="cadre">
+            <FacebookProvider appId="352382042235453">
+              <Like
+                href="http://codeworks.me"
+                colorScheme="dark"
+                showFaces
+                share
+              />
+            </FacebookProvider>
             <CardContent>
-              <FacebookProvider appId="352382042235453">
-                <div>
-                  <Like
-                    href="http://codeworks.me"
-                    colorScheme="dark"
-                    showFaces
-                    share
-                  />
-                </div>
-              </FacebookProvider>
               <div className="event-listing">
                 <img
                   src={this.props.event.image}
@@ -114,7 +112,7 @@ export class component extends React.Component {
               </div>
             </CardContent>
           </Card>
-          <div className="map">
+          <div className="map-cadre">
             <Card>
               <CardContent className="map-card">
                 <div className="map-detail">

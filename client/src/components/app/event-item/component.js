@@ -31,7 +31,7 @@ export class component extends React.Component {
     const auth = this.props.auth;
     return (
       <React-Fragment>
-        <Card>
+        <Card class="cadre">
           <CardActionArea>
             <div className="single-event" onClick={this.handleClick}>
               <CardContent>

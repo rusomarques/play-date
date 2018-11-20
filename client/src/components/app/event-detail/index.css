@@ -3,26 +3,14 @@
   justify-content: space-evenly;
   margin-top: 10px;
   flex-wrap: wrap;
-  /* margin: 20px; */
   padding: 20px;
 }
-
-/* .MuiPaper-root-54 {
-  max-width: 100%;
-  margin: 20px;
-  display: flex;
-} */
 
 .event-listing {
   display: flex;
   flex-direction: column;
   max-width: 500px;
 }
-
-/* .event-listing img {
-  border-radius: 50%;
-  height: 200px;
-} */
 
 .title-detail {
   margin: 20px;
@@ -33,11 +21,6 @@
   flex-direction: column;
 }
 
-/* .map-detail {
-  max-width: 500px;
-  align-self: center;
-} */
-
 .map-card {
   max-width: 500px;
   align-self: center;
@@ -46,4 +29,12 @@
 .age-price,
 .price {
   display: flex;
+}
+
+.map-cadre {
+  box-shadow: 8px 8px 6px #888888;
+}
+
+.cadre {
+  box-shadow: 8px 8px 6px #888888;
 }
