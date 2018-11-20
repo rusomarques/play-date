@@ -11,7 +11,7 @@ import { Redirect } from 'react-router-dom';
 
 export class component extends Component {
   state = {
-    auth: true
+    auth: false
   };
 
   handleAuth(boolean) {

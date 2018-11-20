@@ -45,8 +45,6 @@ export class AuthComponent extends React.Component {
       };
     }
 
-    this.props.onClick(true);
-
     PostData('signup', postData).then(result => {
       let responseJson = result;
       if (responseJson.userData) {
@@ -88,7 +86,7 @@ export class AuthComponent extends React.Component {
 
             <FacebookLogin
               appId={facebookToken}
-              autoLoad={true}
+              autoLoad={false}
               fields="name,email,picture"
               callback={this.responseFacebook}
               cssClass="my-facebook-button-class"
