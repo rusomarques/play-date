@@ -38,6 +38,8 @@ Play Dates makes it easy to find activities that are going on for kids near you.
 
 4. cd into the server folder and run ````node index.js```` to start the express server
 
+5. Run a local instance of sequelize on your machine
+
 
 ## Tech Stack
 
