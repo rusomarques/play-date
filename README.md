@@ -10,8 +10,11 @@ Play Dates makes it easy to find activities that are going on for kids near you.
 
 <p align="center">
   <img src= "https://res.cloudinary.com/cjrrcrosr/image/upload/v1544297572/Screenshot_2018-12-08_at_20.11.45.png"/>
-  
+  </p>
+  <p align="center">
   <img src= "https://res.cloudinary.com/cjrrcrosr/image/upload/v1544439529/Screenshot_2018-12-10_at_11.58.02.png"/>
+  </p>
+  <p align="center">
   <img src= "https://res.cloudinary.com/cjrrcrosr/image/upload/c_scale,w_300/v1544297570/Screenshot_2018-12-08_at_20.23.09.png"/>
 </p>
 
