@@ -4,7 +4,7 @@ import moment from 'moment';
 import { Map } from '../map';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import { FacebookProvider, Like } from 'react-facebook';
+import { Like } from 'react-facebook';
 import { withStyles } from '@material-ui/styles';
 
 import './index.css';

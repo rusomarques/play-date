@@ -90,6 +90,7 @@ export class AuthComponent extends React.Component {
               scope="email"
               onCompleted={this.responseFacebook}
               onError={this.responseFacebook}
+              className="my-facebook-button-class"
             >
               <span>Login via Facebook</span>
             </LoginButton>
