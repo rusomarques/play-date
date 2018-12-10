@@ -11,8 +11,7 @@ Play Dates makes it easy to find activities that are going on for kids near you.
 <p align="center">
   <img src= "https://res.cloudinary.com/cjrrcrosr/image/upload/v1544297572/Screenshot_2018-12-08_at_20.11.45.png"/>
   
-  <img src= "https://res.cloudinary.com/cjrrcrosr/image/upload/v1544297571/Screenshot_2018-12-08_at_20.12.17.png"/>
-  
+  <img src= "https://res.cloudinary.com/cjrrcrosr/image/upload/v1544439529/Screenshot_2018-12-10_at_11.58.02.png"/>
   <img src= "https://res.cloudinary.com/cjrrcrosr/image/upload/c_scale,w_300/v1544297570/Screenshot_2018-12-08_at_20.23.09.png"/>
 </p>
 
@@ -30,13 +29,13 @@ Play Dates makes it easy to find activities that are going on for kids near you.
 
    ```bash
    npm install
-   cd client			# ! Change into the client folder !
-   npm start
+  
    ```
 
-3. While in the client folder, run ````npm start```` to start the React development environment that will build the JS bundle for your app.
+3. While in the client folder ````cd client````, run ````npm start```` to start the React development environment that will build the JS bundle for your app.
 
-4. cd into the server folder and run ````node index.js```` to start the express server
+4. Connect to the backend in the server folder ````cd server````, run ````node index.js```` to start the express server
+ 
 
 5. Run a local instance of sequelize on your machine
 
