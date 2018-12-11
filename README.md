@@ -17,7 +17,7 @@ Play Dates makes it easy to find activities that are going on for kids near you.
 ## Screenshots
 
 <p align="center">
-  <img src= "/assets/Screen Shot_2018-12-11_at_10.13.20.png"/>
+  <img src= "./src/assets/Screen Shot_2018-12-11_at_10.13.20.png"/>
   </p>
   <p align="center">
   <img src= "/assets/Screen Shot_2018-12-11_at_10.13.38.png" height="350px"/>   <img src= "/assets/Screen Shot_2018-12-11_at_10.15.18.png"/>
