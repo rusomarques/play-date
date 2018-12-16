@@ -94,6 +94,17 @@ Finally, migrate the database on your local machine:
 cd server
 npm run recreateDb
 ```
+### Social logins 
+
+**Google App:** go to [Google API Console](https://console.developers.google.com/apis/credentials) create app and setup OAuth client ID following [this steps](https://developers.google.com/authorized-buyers/rtb/open-bidder/google-app-guide).
+
+**Facebook App:** go to [Facebook for developers](https://developers.facebook.com/docs/apps/) create app and setup oAuth.
+
+In client/src/config.js 
+```javascript
+export const googleToken = 'your_google_token';
+export const facebookToken = 'your_facebook_token';
+```
 
 ## Usage
 
